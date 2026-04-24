@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Easy-Job Multiservicios | Jardinería y Aseo Profesional</title>
+  <meta name="description" content="Servicios profesionales de jardinería y aseo. Mantenimiento de jardines, podas, riego, limpieza residencial y empresarial. ¡Cotiza gratis!" />
+  <meta name="theme-color" content="#126B4E" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Easy-Job Multiservicios | Jardinería y Aseo" />
+  <meta property="og:description" content="Tu jardín impecable y tus espacios relucientes sin complicaciones. Cotiza por WhatsApp." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Favicon SVG (funciona en todos los navegadores modernos) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23126B4E'/%3E%3Cpath d='M20 50 L35 65 L70 30' stroke='white' stroke-width='8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <!-- Manifest para PWA -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" href="/assets/icons/icon-192x192.png">
+
+  <!-- Open Graph Image (para compartir en redes sociales) -->
+  <meta property="og:image" content="https://tudominio.com/assets/portada.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://tudominio.com/">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Easy-Job Multiservicios | Jardinería y Aseo Profesional">
+  <meta name="twitter:description" content="Servicios profesionales de jardinería y aseo. Mantenimiento de jardines, podas, riego, limpieza residencial y empresarial.">
+  <meta name="twitter:image" content="https://tudominio.com/assets/portada.jpg">
+</head>
+<body>
+  <!-- ========= Header ========= -->
+  <header id="header">
+    <div class="container nav">
+      <a class="logo" href="#inicio">
+        <span class="logo-mark">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+            <rect width="36" height="36" rx="10" fill="url(#logoGradient)"/>
+            <path d="M12 18L16 22L24 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="logoGradient" x1="0" y1="0" x2="36" y2="36">
+                <stop offset="0%" stop-color="#126B4E"/>
+                <stop offset="100%" stop-color="#0f5a41"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="logo-text">
+          <span class="logo-title">Easy-Job</span>
+          <span class="logo-subtitle">Multiservicios</span>
+        </span>
+      </a>
+      <nav>
+        <button class="menu-toggle btn btn-outline" aria-label="Menú" id="menuBtn">☰</button>
+        <div class="nav-links" id="navLinks">
+          <a href="#inicio">Inicio</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#proceso">Cómo trabajamos</a>
+          <a href="#antes-despues">Antes y Después</a>
+          <a href="#galeria">Galería</a>
+          <a href="#testimonios">Testimonios</a>
+          <a href="#faq">Preguntas</a>
+          <a href="#contacto" class="btn btn-primary">Cotizar ahora</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========= Hero Section ========= -->
+    <section id="inicio" class="hero-section">
+      <div class="container hero">
+        <div class="hero-content fade-in">
+          <span class="badge">✨ Jardinería y Aseo Profesional</span>
+          <h1>Tu jardín impecable y tus espacios <span class="text-gradient">relucientes</span></h1>
+          <p class="hero-description">Atendemos hogares, conjuntos y empresas. Programas de mantenimiento, limpiezas profundas, podas, riego y más. ¡Déjalo todo en nuestras manos!</p>
+          <div class="hero-cta">
+            <a href="#contacto" class="btn btn-primary btn-lg">
+              <span>📋</span> Cotizar gratis
+            </a>
+            <a href="https://wa.me/573202095621?text=Hola%20Easy-Job,%20quiero%20una%20cotización" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+              <span>💬</span> WhatsApp
+            </a>
+          </div>
+          <div class="hero-benefits">
+            <div class="benefit-item">
+              <span class="benefit-icon">✓</span>
+              <span>Visita sin costo</span>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-icon">✓</span>
+              <span>Presupuesto justo</span>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-icon">✓</span>
+              <span>Garantía total</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image fade-in">
+          <div class="hero-img-wrapper">
+            <img src="assets/img/hero/portada.jpg" alt="Equipo de jardinería trabajando" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'placeholder-img\'><span>🌿</span><p>Tu jardín impecable</p></div>'">
+            <div class="hero-stamp">
+              <span class="stamp-icon">✓</span>
+              <span>Garantía de satisfacción</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust Bar -->
+      <div class="container">
+        <div class="trust-bar fade-in">
+          <div class="trust-item">
+            <span class="trust-icon">🌿</span>
+            <div class="trust-content">
+              <strong>+5 años</strong>
+              <span class="muted-text">de experiencia</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">🕒</span>
+            <div class="trust-content">
+              <strong>Atención 7/7</strong>
+              <span class="muted-text">agenda flexible</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">🛡️</span>
+            <div class="trust-content">
+              <strong>Garantía</strong>
+              <span class="muted-text">trabajo responsable</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">⭐</span>
+            <div class="trust-content">
+              <strong id="clientesSatisfechos" data-target="500">+500</strong>
+              <span class="muted-text">clientes satisfechos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= Servicios ========= -->
+    <section id="servicios" class="section services-section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-tag">Nuestros Servicios</span>
+          <h2>¿Qué necesitas hoy?</h2>
+          <p class="section-description">Soluciones completas para jardines y espacios. Elige el servicio que buscas o cotiza uno personalizado.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="card service-card fade-in">
+            <div class="service-badge">Jardinería</div>
+            <div class="service-icon">🌿</div>
+            <h3>Mantenimiento de jardines</h3>
+            <p>Podas, corte de césped, abonado, riego y control de maleza. Planes mensuales o por visita.</p>
+            <div class="service-price">
+              <span class="price-label">Desde</span>
+              <span class="price-value">$80.000</span>
+              <span class="price-period">/ visita</span>
+            </div>
+            <a href="#contacto" class="btn btn-outline btn-block">Cotizar este servicio</a>
+          </article>
+
+          <article class="card service-card fade-in">
+            <div class="service-badge">Jardinería</div>
+            <div class="service-icon">🌸</div>
+            <h3>Diseño y siembra</h3>
+            <p>Selección de plantas, jardineras, sustratos y riego según clima y espacio. Instalación completa.</p>
+            <div class="service-price">
+              <span class="price-label">Desde</span>
+              <span class="price-value">$150.000</span>
+              <span class="price-period">/ proyecto</span>
+            </div>
+            <a href="#contacto" class="btn btn-outline btn-block">Cotizar este servicio</a>
+          </article>
+
+          <article class="card service-card fade-in">
+            <div class="service-badge">Aseo</div>
+            <div class="service-icon">🧹</div>
+            <h3>Limpieza residencial</h3>
+            <p>Limpieza profunda de casas y apartamentos. Insumos incluidos. Personal de confianza.</p>
+            <div class="service-price">
+              <span class="price-label">Desde</span>
+              <span class="price-value">$60.000</span>
+              <span class="price-period">/ hora</span>
+            </div>
+            <a href="#contacto" class="btn btn-outline btn-block">Cotizar este servicio</a>
+          </article>
+
+          <article class="card service-card fade-in">
+            <div class="service-badge">Aseo</div>
+            <div class="service-icon">🏢</div>
+            <h3>Limpieza empresarial</h3>
+            <p>Oficinas, locales y áreas comunes. Programación semanal o mensual con supervisión.</p>
+            <div class="service-price">
+              <span class="price-label">Cotización</span>
+              <span class="price-value">personalizada</span>
+            </div>
+            <a href="#contacto" class="btn btn-outline btn-block">Cotizar este servicio</a>
+          </article>
+
+          <article class="card service-card fade-in">
+            <div class="service-badge">Control</div>
+            <div class="service-icon">🐜</div>
+            <h3>Control de plagas</h3>
+            <p>Revisión preventiva y control básico (sin sustancias reguladas). Derivamos casos complejos.</p>
+            <div class="service-price">
+              <span class="price-label">Diagnóstico</span>
+              <span class="price-value">sin costo</span>
+            </div>
+            <a href="#contacto" class="btn btn-outline btn-block">Cotizar este servicio</a>
+          </article>
+
+          <article class="card service-card fade-in">
+            <div class="service-badge">Extra</div>
+            <div class="service-icon">🚛</div>
+            <h3>Retiro de escombros</h3>
+            <p>Disposición de residuos vegetales post-poda, dejando tus espacios listos y limpios.</p>
+            <div class="service-price">
+              <span class="price-label">Según</span>
+              <span class="price-value">volumen</span>
+            </div>
+            <a href="#contacto" class="btn btn-outline btn-block">Cotizar este servicio</a>
+          </article>
+        </div>
+
+        <div class="section-cta fade-in">
+          <p>¿No encuentras lo que buscas?</p>
+          <a href="#contacto" class="btn btn-primary">Cuéntanos tu necesidad y te ayudamos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= Proceso ========= -->
+    <section id="proceso" class="section process-section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-tag">Cómo Trabajamos</span>
+          <h2>Un proceso simple en 4 pasos</h2>
+          <p class="section-description">Sin complicaciones. Desde el primer contacto hasta el trabajo terminado.</p>
+        </div>
+
+        <div class="process-steps">
+          <div class="process-step fade-in">
+            <div class="process-number">1</div>
+            <h3>Contáctanos</h3>
+            <p>Escríbenos por WhatsApp o llena el formulario. Cuéntanos qué necesitas y te responderemos rápido.</p>
+          </div>
+
+          <div class="process-step fade-in">
+            <div class="process-number">2</div>
+            <h3>Visita y cotización</h3>
+            <p>Agendamos una visita sin costo para evaluar el trabajo y darte un presupuesto justo y transparente.</p>
+          </div>
+
+          <div class="process-step fade-in">
+            <div class="process-number">3</div>
+            <h3>Trabajo profesional</h3>
+            <p>Nuestro equipo realiza el servicio con herramientas profesionales, cuidado y atención al detalle.</p>
+          </div>
+
+          <div class="process-step fade-in">
+            <div class="process-number">4</div>
+            <h3>Garantía y satisfacción</h3>
+            <p>Revisamos contigo el resultado. Si algo no está perfecto, volvemos sin costo adicional.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= Antes y Después ========= -->
+    <section id="antes-despues" class="section before-after-section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-tag">Resultados Reales</span>
+          <h2>Antes y Después de nuestros trabajos</h2>
+          <p class="section-description">Desliza para ver la transformación de jardines y espacios que hemos intervenido.</p>
+        </div>
+
+        <div class="before-after-container fade-in">
+          <div class="before-after-wrapper">
+            <div class="before-after-slider" id="baSlider">
+              <!-- Slide 1 -->
+              <div class="ba-slide">
+                <div class="ba-image-container">
+                  <div class="ba-image-before">
+                    <img src="assets/img/antes-despues/jardin1-antes.jpg" alt="Jardín antes" onerror="this.parentElement.innerHTML='<div class=\'placeholder-ba before\'><span>🥀</span><p>Jardín descuidado</p></div>'">
+                    <div class="ba-label before-label">Antes</div>
+                  </div>
+                  <div class="ba-image-after">
+                    <img src="assets/img/antes-despues/jardin1-despues.jpg" alt="Jardín después" onerror="this.parentElement.innerHTML='<div class=\'placeholder-ba after\'><span>🌿</span><p>Jardín renovado</p></div>'">
+                    <div class="ba-label after-label">Después</div>
+                  </div>
+                  <div class="ba-handle" id="baHandle">
+                    <div class="ba-handle-line"></div>
+                    <div class="ba-handle-circle">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 8L22 12L18 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6 8L2 12L6 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="ba-info">
+                  <h4>Renovación completa de jardín frontal</h4>
+                  <p>Podas, nueva siembra y sistema de riego</p>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="ba-slide">
+                <div class="ba-image-container">
+                  <div class="ba-image-before">
+                    <img src="assets/img/antes-despues/jardin2-antes.jpg" alt="Césped antes" onerror="this.parentElement.innerHTML='<div class=\'placeholder-ba before\'><span>🍂</span><p>Césped seco</p></div>'">
+                    <div class="ba-label before-label">Antes</div>
+                  </div>
+                  <div class="ba-image-after">
+                    <img src="assets/img/antes-despues/jardin2-despues.jpg" alt="Césped después" onerror="this.parentElement.innerHTML='<div class=\'placeholder-ba after\'><span>🌱</span><p>Césped verde</p></div>'">
+                    <div class="ba-label after-label">Después</div>
+                  </div>
+                  <div class="ba-handle" id="baHandle2">
+                    <div class="ba-handle-line"></div>
+                    <div class="ba-handle-circle">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 8L22 12L18 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6 8L2 12L6 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="ba-info">
+                  <h4>Recuperación de césped</h4>
+                  <p>Abonado, resiembra y tratamiento</p>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="ba-slide">
+                <div class="ba-image-container">
+                  <div class="ba-image-before">
+                    <img src="assets/img/antes-despues/oficina1-antes.jpg" alt="Oficina antes" onerror="this.parentElement.innerHTML='<div class=\'placeholder-ba before\'><span>📦</span><p>Espacio desordenado</p></div>'">
+                    <div class="ba-label before-label">Antes</div>
+                  </div>
+                  <div class="ba-image-after">
+                    <img src="assets/img/antes-despues/oficina1-despues.jpg" alt="Oficina después" onerror="this.parentElement.innerHTML='<div class=\'placeholder-ba after\'><span>✨</span><p>Espacio limpio</p></div>'">
+                    <div class="ba-label after-label">Después</div>
+                  </div>
+                  <div class="ba-handle" id="baHandle3">
+                    <div class="ba-handle-line"></div>
+                    <div class="ba-handle-circle">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 8L22 12L18 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6 8L2 12L6 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="ba-info">
+                  <h4>Limpieza profunda de oficinas</h4>
+                  <p>Limpieza completa de área empresarial</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="ba-controls">
+              <button class="ba-control prev" id="baPrev" aria-label="Anterior">‹</button>
+              <div class="ba-dots" id="baDots"></div>
+              <button class="ba-control next" id="baNext" aria-label="Siguiente">›</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-cta fade-in">
+          <p>¿Quieres ver una transformación similar en tu espacio?</p>
+          <a href="https://wa.me/573202095621?text=Hola%20Easy-Job,%20quiero%20ver%20cómo%20pueden%20transformar%20mi%20jardín" class="btn btn-whatsapp" target="_blank" rel="noopener">
+            <span>💬</span> Ver opciones para mi jardín
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= Galería de Proyectos ========= -->
+    <section id="galeria" class="section gallery-section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-tag">Nuestro Trabajo</span>
+          <h2>Galería de proyectos</h2>
+          <p class="section-description">Una selección de nuestros mejores trabajos en jardinería y limpieza.</p>
+        </div>
+
+        <!-- Galería filtrable -->
+        <div class="gallery-filter fade-in">
+          <button class="gallery-filter-btn active" data-filter="all">Todos</button>
+          <button class="gallery-filter-btn" data-filter="jardines">Jardines</button>
+          <button class="gallery-filter-btn" data-filter="limpieza">Limpieza</button>
+          <button class="gallery-filter-btn" data-filter="empresarial">Empresarial</button>
+        </div>
+
+        <div class="gallery-grid fade-in" id="galleryGrid">
+          <div class="gallery-item" data-category="jardines">
+            <img src="assets/img/galeria/trabajo1.jpeg" alt="Poda de césped profesional" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-category">Jardines</span>
+              <h4>Poda de césped</h4>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="jardines">
+            <img src="assets/img/galeria/trabajo2.jpg" alt="Jardín frontal renovado" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-category">Jardines</span>
+              <h4>Jardín frontal renovado</h4>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="jardines">
+            <img src="assets/img/galeria/trabajo3.jpg" alt="Instalación de plantas ornamentales" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-category">Jardines</span>
+              <h4>Plantas ornamentales</h4>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="limpieza">
+            <img src="assets/img/galeria/trabajo4.jpg" alt="Limpieza de oficinas" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-category">Limpieza</span>
+              <h4>Limpieza de oficinas</h4>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="jardines">
+            <img src="assets/img/galeria/trabajo5.jpg" alt="Mantenimiento de áreas verdes" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-category">Jardines</span>
+              <h4>Áreas verdes</h4>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="jardines">
+            <img src="assets/img/galeria/trabajo6.jpg" alt="Jardinera vertical" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-category">Jardines</span>
+              <h4>Jardín vertical</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center" style="margin-top: 2rem;">
+          <a href="#contacto" class="btn btn-outline">
+            <span>📸</span> Ver más proyectos en WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= Testimonios ========= -->
+    <section id="testimonios" class="section testimonials-section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-tag">Testimonios</span>
+          <h2>Lo que dicen nuestros clientes</h2>
+          <p class="section-description">Historias reales de clientes satisfechos.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+            <blockquote>"Contraté el mantenimiento del jardín de mi casa y quedé encantada. Son puntuales, profesionales y dejaron todo impecable. El precio fue muy justo."</blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar">MG</div>
+              <div class="author-info">
+                <strong>María González</strong>
+                <span class="muted-text">Casa residencial, Cajicá</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+            <blockquote>"Llevan 6 meses haciendo el mantenimiento de las áreas verdes de nuestro conjunto residencial. El servicio ha sido consistente y la comunicación excelente."</blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar">CR</div>
+              <div class="author-info">
+                <strong>Carlos Ramírez</strong>
+                <span class="muted-text">Administrador de conjunto</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+            <blockquote>"El servicio de limpieza de nuestra oficina superó las expectativas. El equipo es discreto, eficiente y deja todo perfecto. Totalmente recomendados."</blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar">AP</div>
+              <div class="author-info">
+                <strong>Andrés Pérez</strong>
+                <span class="muted-text">Gerente de empresa</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonials-cta fade-in">
+          <div class="testimonials-cta-content">
+            <h3>¿Listo para transformar tu espacio?</h3>
+            <p>Únete a más de 500 clientes satisfechos</p>
+          </div>
+          <a href="https://wa.me/573202095621?text=Hola%20Easy-Job,%20quiero%20ser%20un%20cliente%20satisfecho" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+            <span>💬</span> Contactar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= FAQ ========= -->
+    <section id="faq" class="section faq-section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-tag">Preguntas Frecuentes</span>
+          <h2>Resolvemos tus dudas</h2>
+          <p class="section-description">Las preguntas que más nos hacen nuestros clientes.</p>
+        </div>
+
+        <div class="faq-container fade-in">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>¿Hacen visitas a domicilio para cotizar?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Sí, realizamos visitas sin costo dentro del área metropolitana (Cajicá, Chía, Zipaquirá y alrededores) para evaluar el trabajo y darte un presupuesto preciso. Para servicios pequeños, podemos darte una cotización aproximada por WhatsApp con fotos y detalles.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>¿Qué formas de pago aceptan?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Aceptamos efectivo, transferencia bancaria, Nequi, Daviplata y tarjetas de crédito/débito. Para servicios empresariales, manejamos facturación con condiciones especiales de pago.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>¿El personal es de confianza?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutamente. Todo nuestro personal pasa por un proceso de selección riguroso con verificación de referencias. Están capacitados, uniformados y supervisados. Tu tranquilidad es nuestra prioridad.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>¿Tienen garantía por el trabajo?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Sí, todos nuestros servicios tienen garantía de satisfacción. Si algo no queda como esperabas, volvemos sin costo adicional para corregirlo. Tu satisfacción está 100% garantizada.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>¿Cuánto tiempo tarda un servicio típico?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Depende del servicio: un mantenimiento de jardín promedio toma 2-4 horas, una limpieza residencial profunda 3-6 horas. En la visita inicial te daremos un tiempo estimado exacto.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>¿Atienden fines de semana?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Sí, atendemos sábados de 9:00 AM a 5:00 PM. Los domingos solo para servicios urgentes o programaciones especiales. Consulta disponibilidad al momento de agendar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= Contacto / CTA Final ========= -->
+    <section id="contacto" class="section contact-section">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-content fade-in">
+            <span class="section-tag">Contáctanos</span>
+            <h2>¡Cotiza gratis y sin compromiso!</h2>
+            <p class="section-description">Déjanos tus datos y te responderemos en menos de 1 hora (en horario laboral). O escríbenos directamente por WhatsApp.</p>
+
+            <div class="contact-direct">
+              <a href="https://wa.me/573202095621?text=Hola%20Easy-Job,%20quiero%20una%20cotización" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+                <span>💬</span> Enviar WhatsApp
+              </a>
+              <a href="tel:+573202095621" class="btn btn-outline btn-lg">
+                <span>📞</span> Llamar ahora
+              </a>
+            </div>
+
+            <div class="contact-info-block">
+              <div class="contact-info-item">
+                <span class="contact-info-icon">📧</span>
+                <div>
+                  <strong>Correo</strong>
+                  <a href="mailto:easy.jobmultiserviciossas@gmail.com">easy.jobmultiserviciossas@gmail.com</a>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <span class="contact-info-icon">⏰</span>
+                <div>
+                  <strong>Horario</strong>
+                  <span>Lunes a viernes: 9:00 AM – 5:00 PM<br>Sábado: 9:00 AM – 12:00 PM</span>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <span class="contact-info-icon">📍</span>
+                <div>
+                  <strong>Cobertura</strong>
+                  <span>Cajicá, Chía, Zipaquirá y municipios cercanos</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-wrapper fade-in">
+            <form id="formCotizacion" class="contact-form">
+              <div class="form-group">
+                <label for="nombre">Nombre completo *</label>
+                <input id="nombre" name="nombre" type="text" required placeholder="Tu nombre" />
+              </div>
+
+              <div class="form-group">
+                <label for="telefono">Teléfono / WhatsApp *</label>
+                <input id="telefono" name="telefono" type="tel" required placeholder="Ej: 300 000 0000" />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input id="email" name="email" type="email" placeholder="tucorreo@ejemplo.com" />
+              </div>
+
+              <div class="form-group">
+                <label for="servicio">Servicio de interés</label>
+                <select id="servicio" name="servicio">
+                  <option value="">Selecciona una opción</option>
+                  <option>Mantenimiento de jardines</option>
+                  <option>Diseño y siembra</option>
+                  <option>Limpieza residencial</option>
+                  <option>Limpieza empresarial</option>
+                  <option>Control de plagas</option>
+                  <option>Retiro de escombros</option>
+                  <option>Otro</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="detalle">Cuéntanos tu necesidad</label>
+                <textarea id="detalle" name="detalle" rows="4" placeholder="Metros del jardín, frecuencia, dirección aproximada, etc."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg btn-block">
+                <span>🚀</span> Enviar solicitud
+              </button>
+
+              <p class="form-note">
+                <span>🔒</span> Tus datos están seguros. No compartimos tu información.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= CTA Final WhatsApp ========= -->
+    <section class="section whatsapp-cta-section">
+      <div class="container">
+        <div class="whatsapp-cta fade-in">
+          <div class="whatsapp-cta-content">
+            <span class="whatsapp-icon">💬</span>
+            <h2>¿Prefieres chatear directamente?</h2>
+            <p>Respuesta rápida por WhatsApp. Sin esperas, sin formularios.</p>
+          </div>
+          <a href="https://wa.me/573202095621?text=Hola%20Easy-Job,%20vengo%20de%20su%20página%20web%20y%20quiero%20una%20cotización" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+            <span>💬</span> Chatear ahora
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========= Footer ========= -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="logo">
+            <span class="logo-mark">
+              <svg width="30" height="30" viewBox="0 0 36 36" fill="none">
+                <rect width="36" height="36" rx="8" fill="white"/>
+                <path d="M12 18L16 22L24 14" stroke="#126B4E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="logo-text">
+              <span class="logo-title">Easy-Job</span>
+              <span class="logo-subtitle">Multiservicios</span>
+            </span>
+          </div>
+          <p class="footer-description">Servicios profesionales de jardinería y aseo para hogares y empresas.</p>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Servicios</h4>
+            <ul>
+              <li><a href="#servicios">Mantenimiento de jardines</a></li>
+              <li><a href="#servicios">Diseño y siembra</a></li>
+              <li><a href="#servicios">Limpieza residencial</a></li>
+              <li><a href="#servicios">Limpieza empresarial</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Empresa</h4>
+            <ul>
+              <li><a href="#proceso">Cómo trabajamos</a></li>
+              <li><a href="#galeria">Galería</a></li>
+              <li><a href="#testimonios">Testimonios</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Contacto</h4>
+            <ul>
+              <li><a href="tel:+573202095621">+57 320 209 5621</a></li>
+              <li><a href="mailto:easy.jobmultiserviciossas@gmail.com">easy.jobmultiserviciossas@gmail.com</a></li>
+              <li>Cajicá, Colombia</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Easy-Job Multiservicios. Todos los derechos reservados. | <a href="privacidad.html" style="color: rgba(255,255,255,0.7);">Política de Privacidad</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/573202095621?text=Hola%20Easy-Job,%20quiero%20una%20cotización" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+    <span>💬</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

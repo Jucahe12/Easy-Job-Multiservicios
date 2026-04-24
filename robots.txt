@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://easy-job-multiservicios.com/sitemap.xml
+
+# Bloquear acceso a carpetas de sistema (opcional pero recomendado)
+Disallow: /assets/img/antes-despues/
