@@ -24,6 +24,8 @@ window.addEventListener("scroll", () => {
 const menuBtn = $("#menuBtn");
 const navLinks = $("#navLinks");
 
+menuBtn?.setAttribute("aria-expanded", "false");
+
 menuBtn?.addEventListener("click", () => {
   navLinks?.classList.toggle("open");
   menuBtn?.setAttribute("aria-expanded", navLinks?.classList.contains("open"));
@@ -545,13 +547,22 @@ function init() {
   initAnimatedCounter();
   initFormValidation();
   initFormSubmit();
+  initWhatsAppLinks();
 
   // Animación de entrada del hero
   setTimeout(() => {
     document.body.classList.add("loaded");
   }, 100);
 
-  console.log("✅ Easy-Job - Landing Page optimizada lista");
+}
+
+function initWhatsAppLinks() {
+  document.querySelectorAll("[data-wa-msg]").forEach(el => {
+    const msg = el.getAttribute("data-wa-msg");
+    if (msg) {
+      el.href = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
+    }
+  });
 }
 
 // Ejecutar cuando el DOM esté listo

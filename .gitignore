@@ -1,0 +1,16 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Deployment archive
+easy-job-deploy.tar.gz
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Env (if added later)
+.env
+.env.local
