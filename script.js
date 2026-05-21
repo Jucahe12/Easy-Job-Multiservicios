@@ -58,6 +58,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         target.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     }
+    const service = this.getAttribute("data-service");
+    if (service) {
+      const select = $("#servicio");
+      if (select) {
+        select.value = service;
+      }
+    }
   });
 });
 
@@ -431,7 +438,7 @@ function initAnimatedCounter() {
   const counterElement = $("#clientesSatisfechos");
   if (!counterElement) return;
 
-  const target = parseInt(counterElement.dataset.target) || 500;
+  const target = parseInt(counterElement.dataset.target) || 100;
   let current = 0;
   const increment = target / 50;
   let animated = false;

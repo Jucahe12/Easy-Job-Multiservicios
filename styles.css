@@ -265,35 +265,11 @@ header.scrolled {
 }
 
 .logo-mark {
-  width: 36px;
-  height: 36px;
-  display: grid;
-  place-items: center;
-  border-radius: 10px;
-  box-shadow: var(--shadow-md);
-  background: var(--brand-gradient);
-}
-
-.logo-text {
   display: flex;
-  flex-direction: column;
-  line-height: 1.1;
+  align-items: center;
 }
 
-.logo-title {
-  font-weight: 800;
-  font-size: 1.2rem;
-  background: var(--brand-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
 
-.logo-subtitle {
-  font-weight: 500;
-  font-size: 0.85rem;
-  color: var(--muted);
-}
 
 nav a {
   font-weight: 600;
@@ -554,11 +530,9 @@ nav a.btn {
   border-color: var(--brand-light);
 }
 
-.trust-icon {
-  font-size: 2.8rem;
-  line-height: 1;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-}
+  .trust-icon {
+    font-size: 1.5rem;
+  }
 
 .trust-content {
   display: flex;
@@ -693,15 +667,16 @@ nav a.btn {
 }
 
 .service-icon {
-  font-size: 3.5rem;
+  font-size: 2.8rem;
   line-height: 1;
   margin-bottom: 0.5rem;
+  color: var(--brand);
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
   transition: var(--transition);
 }
 
 .service-card:hover .service-icon {
-  transform: scale(1.1) rotate(5deg);
+  transform: scale(1.15);
 }
 
 .service-card h3 {
@@ -1419,6 +1394,7 @@ nav a.btn {
   letter-spacing: 0.1rem;
   display: flex;
   gap: 0.2rem;
+  color: #f59e0b;
 }
 
 .testimonial-card blockquote {
@@ -1588,13 +1564,13 @@ nav a.btn {
 }
 
 .faq-icon {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+  line-height: 1;
   color: var(--brand);
   transition: var(--transition-smooth);
   flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -1700,9 +1676,12 @@ nav a.btn {
   width: 44px;
   height: 44px;
   background: var(--brand-gradient);
-  color: white;
   border-radius: 50%;
   box-shadow: 0 4px 12px rgba(18,107,78,0.3);
+}
+
+.contact-info-icon i {
+  color: white;
 }
 
 .contact-info-item strong {
@@ -1855,6 +1834,10 @@ nav a.btn {
   transform: translateY(-4px);
 }
 
+.whatsapp-cta .btn {
+  text-align: center;
+}
+
 .whatsapp-cta-content {
   display: flex;
   align-items: center;
@@ -1915,18 +1898,21 @@ footer::before {
 }
 
 .footer-brand .logo {
+  display: inline-flex;
+  padding: 1.2rem 1.5rem;
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
   margin-bottom: 1.2rem;
   transition: var(--transition);
 }
 
 .footer-brand .logo:hover {
   transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
 }
 
-.footer-brand .logo-title {
-  color: white;
-  -webkit-text-fill-color: white;
-}
+
 
 .footer-brand .logo-subtitle {
   color: var(--brand-light);
@@ -2023,6 +2009,7 @@ footer::before {
   align-items: center;
   justify-content: center;
   font-size: 2rem;
+  color: white;
   box-shadow: 0 4px 20px rgba(37,211,102,0.4), 0 0 0 4px rgba(37,211,102,0.1);
   z-index: 100;
   transition: var(--transition-smooth);
@@ -2240,7 +2227,6 @@ body.loaded .hero-image { animation-delay: 0.4s; }
     margin-top: 0.5rem;
   }
   .menu-toggle { display: inline-flex; }
-  .logo-text { display: none; }
 
   /* Hero */
   .hero-section { padding: 1.5rem 0 2rem; }
