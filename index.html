@@ -16,6 +16,10 @@
   <link rel="preload" href="styles.css" as="style">
   <link rel="preload" href="script.js" as="script">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -110,9 +114,6 @@
             <a href="#contacto" class="btn btn-primary btn-lg">
               Cotizar gratis
             </a>
-            <a data-wa-msg="Hola Easy-Job, quiero una cotización" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
-              WhatsApp
-            </a>
           </div>
           <div class="hero-benefits">
             <div class="benefit-item">
@@ -128,7 +129,7 @@
         </div>
         <div class="hero-image fade-in">
           <div class="hero-img-wrapper">
-            <img src="assets/media/Poda de Arbol 2.jpeg" alt="Equipo de jardinería trabajando" loading="lazy">
+            <img src="assets/media/Corte de cesped con podadora.jpeg" alt="Equipo de jardinería trabajando" loading="lazy">
             <div class="hero-stamp">
               <span class="stamp-icon"><i class="fa-solid fa-check"></i></span>
               <span>Garantía de satisfacción</span>
@@ -164,7 +165,7 @@
           <div class="trust-item">
             <span class="trust-icon"><i class="fa-solid fa-face-smile"></i></span>
             <div class="trust-content">
-              <strong id="clientesSatisfechos" data-target="100">+100</strong>
+              <strong id="clientesSatisfechos" data-target="20">+20</strong>
               <span class="muted-text">clientes satisfechos</span>
             </div>
           </div>
@@ -173,7 +174,7 @@
     </section>
 
     <!-- ========= Servicios ========= -->
-    <section id="servicios" class="section services-section">
+    <section id="servicios" class="section services-section pattern-bg">
       <div class="container">
         <div class="section-header fade-in">
           <span class="section-tag">Nuestros Servicios</span>
@@ -187,7 +188,7 @@
             <div class="service-icon"><i class="fa-solid fa-seedling"></i></div>
             <h3>Diseño paisajístico</h3>
             <p>Planeación, diseño y ejecución de parques, zonas verdes, jardines y vallados. Corte de césped, bordeo, barrido y control de maleza.</p>
-            <a href="#contacto" class="btn btn-outline btn-block" data-service="Diseño paisajístico">Cotizar este servicio</a>
+            <a href="#" class="btn btn-whatsapp btn-block" data-wa-msg="Hola Easy-Job, estoy interesado en el servicio de Diseño paisajístico. Necesito información sobre: planeación, diseño y ejecución de mantenimiento de parques, zonas verdes, jardines y vallados.">Cotizar por WhatsApp</a>
           </article>
 
           <article class="card service-card fade-in">
@@ -195,7 +196,7 @@
             <div class="service-icon"><i class="fa-solid fa-tree"></i></div>
             <h3>Poda de árboles</h3>
             <p>Poda de formación, mantenimiento y podas excepcionales con motosierra. También realizamos plateo y poda de raíces.</p>
-            <a href="#contacto" class="btn btn-outline btn-block" data-service="Poda de árboles">Cotizar este servicio</a>
+            <a href="#" class="btn btn-whatsapp btn-block" data-wa-msg="Hola Easy-Job, quiero cotizar el servicio de Poda de árboles. Incluye podas de formación, mantenimiento, podas excepcionales (por peligro) y poda de raíces.">Cotizar por WhatsApp</a>
           </article>
 
           <article class="card service-card fade-in">
@@ -203,7 +204,7 @@
             <div class="service-icon"><i class="fa-solid fa-droplet"></i></div>
             <h3>Riego y abonado</h3>
             <p>Aplicación de agua y fertilizantes según tipo de suelo y necesidades de las plantas, mejorando su follaje y vida paisajística.</p>
-            <a href="#contacto" class="btn btn-outline btn-block" data-service="Riego y abonado">Cotizar este servicio</a>
+            <a href="#" class="btn btn-whatsapp btn-block" data-wa-msg="Hola Easy-Job, necesito cotizar el servicio de Riego y abonado. Quiero aplicar agua y fertilizantes según las necesidades de mis plantas para mejorar su follaje y vida paisajística.">Cotizar por WhatsApp</a>
           </article>
 
           <article class="card service-card fade-in">
@@ -211,7 +212,7 @@
             <div class="service-icon"><i class="fa-solid fa-soap"></i></div>
             <h3>Productos de aseo</h3>
             <p>Gran variedad de productos para limpieza y desinfección, incluyendo amonio cuaternario de quinta generación para uso doméstico e industrial.</p>
-            <a href="#contacto" class="btn btn-outline btn-block" data-service="Productos de aseo">Cotizar este servicio</a>
+            <a href="#" class="btn btn-whatsapp btn-block" data-wa-msg="Hola Easy-Job, estoy interesado en los productos de aseo. Necesito información sobre productos de limpieza, desinfección y amonio cuaternario de quinta generación para uso doméstico e industrial.">Cotizar por WhatsApp</a>
           </article>
 
           <article class="card service-card fade-in">
@@ -219,7 +220,7 @@
             <div class="service-icon"><i class="fa-solid fa-tools"></i></div>
             <h3>Arreglos locativos</h3>
             <p>Pintura, drywall, electricidad, ornamentación, fontanería y maestros en general. Asesoría en obras de ingeniería civil y construcción.</p>
-            <a href="#contacto" class="btn btn-outline btn-block" data-service="Arreglos locativos">Cotizar este servicio</a>
+            <a href="#" class="btn btn-whatsapp btn-block" data-wa-msg="Hola Easy-Job, quiero cotizar servicios de Arreglos locativos: pintura, drywall, electricidad, fontanería, ornamentación y maestros en general. También asesoría en obras de ingeniería civil y construcción.">Cotizar por WhatsApp</a>
           </article>
 
           <article class="card service-card fade-in">
@@ -227,7 +228,7 @@
             <div class="service-icon"><i class="fa-solid fa-users"></i></div>
             <h3>Administración de personal</h3>
             <p>Selección, contratación y supervisión de personal de servicios generales, toderos y recepcionistas bajo nuestra propia tutela.</p>
-            <a href="#contacto" class="btn btn-outline btn-block" data-service="Administración de personal">Cotizar este servicio</a>
+            <a href="#" class="btn btn-whatsapp btn-block" data-wa-msg="Hola Easy-Job, necesito el servicio de Administración y Suministro de Personal. Quiero seleccionar, reclutar y contratar personal para servicios generales, toderos, recepcionistas y demás personal necesario, todo bajo la tutela de Easy-Job.">Cotizar por WhatsApp</a>
           </article>
         </div>
 
@@ -276,7 +277,7 @@
     </section>
 
     <!-- ========= Galería de Proyectos ========= -->
-    <section id="galeria" class="section gallery-section">
+    <section id="galeria" class="section gallery-section pattern-bg">
       <div class="container">
         <div class="section-header fade-in">
           <span class="section-tag">Nuestro Trabajo</span>
@@ -456,7 +457,7 @@
         <div class="testimonials-cta fade-in">
           <div class="testimonials-cta-content">
             <h3>¿Listo para transformar tu espacio?</h3>
-            <p>Únete a más de 100 clientes satisfechos</p>
+            <p>Únete a más de 20 clientes satisfechos</p>
           </div>
           <a data-wa-msg="Hola Easy-Job, quiero ser un cliente satisfecho" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
             Contactar por WhatsApp
@@ -539,7 +540,7 @@
     </section>
 
     <!-- ========= Contacto / CTA Final ========= -->
-    <section id="contacto" class="section contact-section">
+    <section id="contacto" class="section contact-section pattern-bg">
       <div class="container">
         <div class="contact-grid">
           <div class="contact-content fade-in">
@@ -634,22 +635,7 @@
       </div>
     </section>
 
-    <!-- ========= CTA Final WhatsApp ========= -->
-    <section class="section whatsapp-cta-section">
-      <div class="container">
-        <div class="whatsapp-cta fade-in">
-          <div class="whatsapp-cta-content">
-            <span class="whatsapp-icon"><i class="fa-brands fa-whatsapp"></i></span>
-            <h2>¿Prefieres chatear directamente?</h2>
-            <p>Respuesta rápida por WhatsApp. Sin esperas, sin formularios.</p>
-          </div>
-          <a data-wa-msg="Hola Easy-Job, vengo de su página web y quiero una cotización" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
-            Chatear ahora
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
+    </main>
 
   <!-- ========= Footer ========= -->
   <footer>

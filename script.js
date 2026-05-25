@@ -373,10 +373,13 @@ function init() {
 
 function initWhatsAppLinks() {
   document.querySelectorAll("[data-wa-msg]").forEach(el => {
-    const msg = el.getAttribute("data-wa-msg");
-    if (msg) {
-      el.href = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
-    }
+    el.addEventListener("click", function(e) {
+      e.preventDefault();
+      const msg = this.getAttribute("data-wa-msg");
+      if (msg) {
+        window.location.href = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
+      }
+    });
   });
 }
 

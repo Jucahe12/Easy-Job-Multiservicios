@@ -4,24 +4,29 @@
   ============================================
 */
 :root {
-  /* Colores principales - Paleta natural moderna */
-  --brand: #126B4E;
-  --brand-dark: #0a4a36;
+  /* Colores principales - Paleta Vibrante/Fresh */
+  --brand: #16A34A;
+  --brand-dark: #15803D;
   --brand-darker: #052d21;
-  --brand-light: #A7D7C5;
-  --brand-soft: #E8F5F0;
-  --brand-fresh: #D1FAE5;
-  --brand-gradient: linear-gradient(135deg, #126B4E 0%, #0a4a36 100%);
-  --brand-gradient-accent: linear-gradient(135deg, #126B4E 0%, #2D9B7E 50%, #0a4a36 100%);
-  --brand-gradient-warm: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%);
+  --brand-light: #86EFAC;
+  --brand-soft: #DCFCE7;
+  --brand-fresh: #BBF7D0;
+  --brand-gradient: linear-gradient(135deg, #16A34A 0%, #15803D 100%);
+  --brand-gradient-accent: linear-gradient(135deg, #16A34A 0%, #22C55E 50%, #15803D 100%);
+  --brand-gradient-warm: linear-gradient(135deg, #BBF7D0 0%, #86EFAC 100%);
 
-  /* Colores de acento - Rojo corporativo */
-  --accent: #C7152D;
-  --accent-light: #e85060;
-  --accent-soft: #fde8eb;
-  --accent-gradient: linear-gradient(135deg, #C7152D 0%, #a11224 100%);
+  /* Colores de acento - Rojo/Naranja vibrante */
+  --accent: #DC2626;
+  --accent-light: #EF4444;
+  --accent-soft: #FEE2E2;
+  --accent-gradient: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
 
-  /* Colores neutros - Más contraste y profundidad */
+  /* Colores cálidos nuevos */
+  --accent-warm: #F59E0B;
+  --accent-coral: #F97316;
+  --accent-soft-warm: #FEF3C7;
+
+  /* Colores neutros - Mayor contraste */
   --ink: #0a2920;
   --ink-light: #1a4a3e;
   --muted: #5A7A6F;
@@ -34,24 +39,24 @@
   --border-light: #E8F1ED;
 
   /* Efectos modernos */
-  --ring: 0 0 0 3px rgba(18,107,78,0.15);
-  --ring-accent: 0 0 0 3px rgba(199,21,45,0.2);
+  --ring: 0 0 0 3px rgba(22,163,74,0.15);
+  --ring-accent: 0 0 0 3px rgba(220,38,38,0.2);
   --radius: 16px;
-  --radius-lg: 24px;
-  --radius-xl: 32px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
   --radius-sm: 10px;
   --radius-full: 9999px;
 
-  /* Sombras modernas en capas */
+  /* Sombras con tinte de color */
   --shadow-xs: 0 1px 2px rgba(10,41,32,0.04);
   --shadow-sm: 0 2px 8px rgba(10,41,32,0.06);
   --shadow-md: 0 4px 16px rgba(10,41,32,0.08);
   --shadow-lg: 0 8px 32px rgba(10,41,32,0.10);
   --shadow-xl: 0 12px 48px rgba(10,41,32,0.12);
   --shadow-2xl: 0 20px 64px rgba(10,41,32,0.16);
-  --shadow-colored: 0 8px 24px rgba(18,107,78,0.20);
-  --shadow-accent: 0 8px 24px rgba(199,21,45,0.20);
-  --shadow-glow: 0 0 40px rgba(18,107,78,0.3);
+  --shadow-colored: 0 8px 24px rgba(22,163,74,0.20);
+  --shadow-accent: 0 8px 24px rgba(220,38,38,0.20);
+  --shadow-glow: 0 0 40px rgba(22,163,74,0.3);
 
   /* Sistema de espaciado consistente */
   --spacing-xs: 0.5rem;
@@ -68,9 +73,9 @@
   --transition-slow: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-  /* Tipografía */
+  /* Tipografía - Poppins para headers */
   --font-sans: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  --font-display: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-display: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 }
 
 /* ====== Reset & base ====== */
@@ -98,10 +103,29 @@ body::before {
   top: 0; left: 0;
   width: 100%; height: 100%;
   background-image:
-    radial-gradient(circle at 20% 30%, rgba(18,107,78,0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(18,107,78,0.03) 0%, transparent 50%);
+    radial-gradient(circle at 20% 30%, rgba(22,163,74,0.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(22,163,74,0.04) 0%, transparent 50%);
   pointer-events: none;
   z-index: -1;
+}
+
+/* Patrón decorativo de hojas en secciones */
+.pattern-bg {
+  position: relative;
+  isolation: isolate;
+}
+
+.pattern-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/img/vecteezy_background-pattern-leaf-seamless-black-illustration-textile_7530608.jpg');
+  background-size: 240px;
+  background-repeat: repeat;
+  opacity: 0.08;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .container { width: min(1120px, 92%); margin-inline: auto; }
@@ -160,13 +184,13 @@ body::before {
 .btn-primary {
   background: var(--brand-gradient);
   color: white;
-  box-shadow: 0 4px 14px rgba(18,107,78,0.3);
+  box-shadow: 0 4px 14px rgba(22,163,74,0.35);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 8px 28px rgba(18,107,78,0.4);
-  filter: brightness(1.1);
+  box-shadow: 0 10px 30px rgba(22,163,74,0.45);
+  filter: brightness(1.08);
 }
 
 .btn-primary:active {
@@ -186,7 +210,7 @@ body::before {
   color: white;
   transform: translateY(-3px) scale(1.03);
   box-shadow: var(--shadow-lg), var(--shadow-colored);
-  filter: brightness(1.1);
+  filter: brightness(1.08);
 }
 
 .btn-outline:active {
@@ -230,14 +254,14 @@ body::before {
   border-radius: var(--radius-full);
   background: var(--brand-gradient);
   color: white;
-  box-shadow: 0 4px 14px rgba(18,107,78,0.3);
+  box-shadow: 0 4px 14px rgba(22,163,74,0.35);
   animation: badge-pulse 2s ease-in-out infinite;
   letter-spacing: 0.3px;
 }
 
 @keyframes badge-pulse {
-  0%, 100% { transform: scale(1); box-shadow: 0 4px 14px rgba(18,107,78,0.3); }
-  50% { transform: scale(1.05); box-shadow: 0 6px 20px rgba(18,107,78,0.4); }
+  0%, 100% { transform: scale(1); box-shadow: 0 4px 14px rgba(22,163,74,0.35); }
+  50% { transform: scale(1.05); box-shadow: 0 8px 24px rgba(22,163,74,0.5); }
 }
 
 /* Badge con brillo */
@@ -340,7 +364,7 @@ nav a.btn {
   right: -5%;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(18,107,78,0.08) 0%, rgba(18,107,78,0.02) 40%, transparent 70%);
+  background: radial-gradient(circle, rgba(22,163,74,0.1) 0%, rgba(22,163,74,0.02) 40%, transparent 70%);
   border-radius: 50%;
   animation: float 8s ease-in-out infinite;
   pointer-events: none;
@@ -353,7 +377,7 @@ nav a.btn {
   left: -5%;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(199,21,45,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(220,38,38,0.06) 0%, transparent 70%);
   border-radius: 50%;
   animation: float 10s ease-in-out infinite reverse;
   pointer-events: none;
@@ -376,10 +400,11 @@ nav a.btn {
 .hero-content { max-width: 620px; }
 
 .hero-content h1 {
-  font-size: clamp(2.4rem, 5vw + 0.5rem, 3.8rem);
+  font-size: clamp(2.5rem, 5vw + 0.5rem, 3.8rem);
   line-height: 1.1;
   margin: 1.2rem 0;
   color: var(--ink);
+  font-family: var(--font-display);
   font-weight: 800;
   letter-spacing: -0.02em;
 }
@@ -573,8 +598,10 @@ nav a.btn {
 }
 
 .section-header h2 {
-  font-size: clamp(1.8rem, 3vw + 0.5rem, 2.5rem);
+  font-size: clamp(2rem, 3vw + 0.5rem, 2.75rem);
   margin: 0 0 1rem;
+  font-family: var(--font-display);
+  font-weight: 800;
   background: var(--brand-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -601,7 +628,7 @@ nav a.btn {
   transform: translateX(-50%);
   width: 80%;
   height: 100%;
-  background: radial-gradient(ellipse at top, rgba(18,107,78,0.04) 0%, transparent 60%);
+  background: radial-gradient(ellipse at top, rgba(22,163,74,0.05) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -674,7 +701,7 @@ nav a.btn {
   border-radius: var(--radius-full);
   background: var(--brand-gradient);
   color: white;
-  box-shadow: 0 2px 8px rgba(18,107,78,0.25);
+  box-shadow: 0 3px 10px rgba(22,163,74,0.3);
   letter-spacing: 0.3px;
 }
 
@@ -695,6 +722,7 @@ nav a.btn {
   margin: 0;
   font-size: 1.25rem;
   color: var(--ink);
+  font-family: var(--font-display);
   font-weight: 700;
 }
 
@@ -746,7 +774,7 @@ nav a.btn {
   position: absolute;
   top: -50%; left: -50%;
   width: 200%; height: 200%;
-  background: radial-gradient(circle, rgba(18,107,78,0.05) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(22,163,74,0.06) 0%, transparent 60%);
   animation: rotate-bg 20s linear infinite;
   pointer-events: none;
 }
@@ -777,7 +805,7 @@ nav a.btn {
   transform: translateX(-50%);
   width: 60%;
   height: 50%;
-  background: radial-gradient(ellipse at bottom, rgba(18,107,78,0.05) 0%, transparent 70%);
+  background: radial-gradient(ellipse at bottom, rgba(22,163,74,0.06) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -879,7 +907,7 @@ nav a.btn {
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(ellipse at top left, rgba(18,107,78,0.04) 0%, transparent 60%);
+  background: radial-gradient(ellipse at top left, rgba(22,163,74,0.05) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -1016,7 +1044,7 @@ nav a.btn {
   top: 0; right: 0;
   width: 40%;
   height: 100%;
-  background: radial-gradient(ellipse at top right, rgba(199,21,45,0.05) 0%, transparent 60%);
+  background: radial-gradient(ellipse at top right, rgba(220,38,38,0.06) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -1061,7 +1089,7 @@ nav a.btn {
   letter-spacing: 0.1rem;
   display: flex;
   gap: 0.2rem;
-  color: #C7152D;
+  color: #DC2626;
 }
 
 .testimonial-card blockquote {
@@ -1227,7 +1255,7 @@ nav a.btn {
   top: 0; right: 0;
   width: 30%;
   height: 100%;
-  background: radial-gradient(ellipse at top right, rgba(199,21,45,0.04) 0%, transparent 70%);
+  background: radial-gradient(ellipse at top right, rgba(220,38,38,0.05) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -1333,7 +1361,7 @@ nav a.btn {
   transform: translateX(-50%);
   width: 80%;
   height: 100%;
-  background: radial-gradient(ellipse at top, rgba(18,107,78,0.04) 0%, transparent 60%);
+  background: radial-gradient(ellipse at top, rgba(22,163,74,0.05) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -1398,7 +1426,7 @@ nav a.btn {
   height: 44px;
   background: var(--brand-gradient);
   border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(18,107,78,0.3);
+  box-shadow: 0 4px 12px rgba(22,163,74,0.35);
 }
 
 .contact-info-icon i {
@@ -1534,78 +1562,6 @@ nav a.btn {
   border-radius: inherit;
 }
 
-/* ====== WhatsApp CTA Section ====== */
-.whatsapp-cta-section {
-  background: var(--bg-alt);
-  position: relative;
-}
-
-.whatsapp-cta-section::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 50%;
-  transform: translateX(-50%);
-  width: 60%;
-  height: 100%;
-  background: radial-gradient(ellipse, rgba(37,211,102,0.08) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.whatsapp-cta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--spacing-lg);
-  background: white;
-  padding: var(--spacing-xl);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-xl);
-  border: 2px solid var(--border-light);
-  position: relative;
-  z-index: 1;
-  transition: var(--transition);
-}
-
-.whatsapp-cta:hover {
-  border-color: var(--brand-light);
-  transform: translateY(-4px);
-}
-
-.whatsapp-cta .btn {
-  text-align: center;
-}
-
-.whatsapp-cta-content {
-  display: flex;
-  align-items: center;
-  gap: 1.8rem;
-}
-
-.whatsapp-icon {
-  font-size: 3.5rem;
-  display: inline-flex;
-  filter: drop-shadow(0 4px 8px rgba(37,211,102,0.3));
-  animation: whatsapp-bounce 2s ease-in-out infinite;
-}
-
-@keyframes whatsapp-bounce {
-  0%, 100% { transform: scale(1) rotate(0deg); }
-  50% { transform: scale(1.1) rotate(-10deg); }
-}
-
-.whatsapp-cta-content h2 {
-  margin: 0 0 0.3rem;
-  color: var(--ink);
-  font-size: 1.6rem;
-  font-weight: 800;
-}
-
-.whatsapp-cta-content p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 1.05rem;
-}
-
 /* ====== Footer ====== */
 footer {
   background: linear-gradient(135deg, var(--brand-darker) 0%, var(--brand-dark) 100%);
@@ -1620,8 +1576,8 @@ footer::before {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: radial-gradient(circle at 20% 50%, rgba(18,107,78,0.2) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(199,21,45,0.1) 0%, transparent 40%);
+  background: radial-gradient(circle at 20% 50%, rgba(22,163,74,0.25) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(220,38,38,0.12) 0%, transparent 40%);
   pointer-events: none;
 }
 
@@ -2018,11 +1974,6 @@ body.loaded .hero-image { animation-delay: 0.4s; }
   .whatsapp-float::after {
     display: none;
   }
-
-  /* WhatsApp CTA */
-  .whatsapp-cta { padding: 1.5rem; flex-direction: column; }
-  .whatsapp-cta-content { flex-direction: column; text-align: center; gap: 0.5rem; }
-  .whatsapp-icon { font-size: 2.5rem; }
 }
 
 /* Táctil */
