@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://easy-job-multiservicios.com/sitemap.xml
+
+# Permitir indexación de imágenes de proyectos (antes/después)

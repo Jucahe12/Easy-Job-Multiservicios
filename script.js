@@ -1,0 +1,455 @@
+// ===== Configuración =====
+const WHATSAPP_PHONE = "573202095621";
+const COMPANY_EMAIL = "easy.jobmultiserviciossas@gmail.com";
+
+// ===== Utilidades =====
+const $ = (sel) => document.querySelector(sel);
+const $$ = (sel) => document.querySelectorAll(sel);
+
+// ===== Año en footer =====
+const yearEl = $("#year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// ===== Header scroll effect =====
+const header = $("#header");
+
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset > 50) {
+    header?.classList.add("scrolled");
+  } else {
+    header?.classList.remove("scrolled");
+  }
+});
+
+// ===== Menú móvil =====
+const menuBtn = $("#menuBtn");
+const navLinks = $("#navLinks");
+
+menuBtn?.setAttribute("aria-expanded", "false");
+
+menuBtn?.addEventListener("click", () => {
+  navLinks?.classList.toggle("open");
+  menuBtn?.setAttribute("aria-expanded", navLinks?.classList.contains("open"));
+});
+
+// Cerrar menú al hacer clic fuera
+document.addEventListener("click", (e) => {
+  if (navLinks?.classList.contains("open") &&
+      !e.target.closest("#navLinks") &&
+      !e.target.closest("#menuBtn")) {
+    navLinks.classList.remove("open");
+  }
+});
+
+// Cerrar menú al hacer clic en enlace
+$$("#navLinks a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks?.classList.remove("open");
+  });
+});
+
+// ===== data-service: preseleccionar servicio en formulario =====
+document.addEventListener("click", (e) => {
+  const anchor = e.target.closest("a[data-service]");
+  if (!anchor) return;
+  const service = anchor.getAttribute("data-service");
+  if (!service) return;
+  const select = document.getElementById("servicio");
+  if (select) {
+    select.value = service;
+    select.dispatchEvent(new Event("change", { bubbles: true }));
+  }
+});
+
+// ===== Galería Carrusel =====
+function initGalleryCarousel() {
+  const track = $("#gcTrack");
+  const prevBtn = $("#gcPrev");
+  const nextBtn = $("#gcNext");
+  const filterBtns = $$(".gallery-filter-btn");
+  if (!track || filterBtns.length === 0) return;
+
+  const allItems = $$(".gallery-item");
+  let currentFilter = "all";
+  let currentIndex = 0;
+  let visibleCards = 3;
+
+  function getVisibleItems() {
+    return track.querySelectorAll(".gallery-item:not(.hidden)");
+  }
+
+  function updateVisibleCount() {
+    if (window.innerWidth < 680) visibleCards = 1;
+    else if (window.innerWidth < 900) visibleCards = 2;
+    else visibleCards = 3;
+  }
+
+  function updateButtons() {
+    const visible = getVisibleItems();
+    prevBtn?.classList.toggle("gc-hidden", currentIndex === 0);
+    nextBtn?.classList.toggle("gc-hidden", currentIndex >= visible.length - visibleCards);
+  }
+
+  function scrollToIndex() {
+    const visible = getVisibleItems();
+    const card = visible[0];
+    if (!card) return;
+    const gap = 28;
+    const cardWidth = card.offsetWidth;
+    const scrollAmount = (cardWidth + gap) * currentIndex;
+    track.scrollTo({ left: scrollAmount, behavior: "smooth" });
+    updateButtons();
+  }
+
+  function applyFilter(filter) {
+    currentFilter = filter;
+    currentIndex = 0;
+
+    filterBtns.forEach(b => b.classList.remove("active"));
+    const activeBtn = document.querySelector(`.gallery-filter-btn[data-filter="${filter}"]`);
+    if (activeBtn) activeBtn.classList.add("active");
+
+    allItems.forEach(item => {
+      const category = item.dataset.category;
+      item.classList.toggle("hidden", filter !== "all" && category !== filter);
+    });
+
+    track.scrollTo({ left: 0, behavior: "instant" });
+    updateButtons();
+  }
+
+  // Filter buttons
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => applyFilter(btn.dataset.filter));
+  });
+
+  // Navigation
+  prevBtn?.addEventListener("click", () => {
+    if (currentIndex > 0) { currentIndex--; scrollToIndex(); }
+  });
+
+  nextBtn?.addEventListener("click", () => {
+    const visible = getVisibleItems();
+    if (currentIndex < visible.length - visibleCards) { currentIndex++; scrollToIndex(); }
+  });
+
+  // Init
+  updateVisibleCount();
+  applyFilter("all");
+
+  window.addEventListener("resize", () => {
+    const prev = visibleCards;
+    updateVisibleCount();
+    if (visibleCards !== prev) {
+      const visible = getVisibleItems();
+      currentIndex = Math.min(currentIndex, Math.max(0, visible.length - visibleCards));
+      scrollToIndex();
+    }
+  });
+}
+
+// ===== FAQ Accordion =====
+function initFAQ() {
+  $$(".faq-item").forEach(item => {
+    const question = item.querySelector(".faq-question");
+    if (!question) return;
+
+    question.addEventListener("click", () => {
+      const isActive = item.classList.contains("active");
+      $$(".faq-item").forEach(i => i.classList.remove("active"));
+      if (!isActive) item.classList.add("active");
+    });
+  });
+}
+
+// ===== Animaciones al hacer scroll =====
+function initScrollAnimations() {
+  // Observer para elementos que aparecen suavemente
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  });
+
+  $$(".fade-in").forEach(el => fadeObserver.observe(el));
+
+  // Observer para animaciones en cascada (stagger)
+  const staggerObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add("visible");
+        }, index * 100);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: "0px 0px -80px 0px"
+  });
+
+  // Aplicar stagger a elementos agrupados
+  $$(".grid-3 .service-card").forEach((el, i) => {
+    el.style.transitionDelay = `${i * 100}ms`;
+    fadeObserver.observe(el);
+  });
+
+  $$(".testimonials-grid .testimonial-card").forEach((el, i) => {
+    el.style.transitionDelay = `${i * 150}ms`;
+    fadeObserver.observe(el);
+  });
+
+  $$(".process-steps .process-step").forEach((el, i) => {
+    el.style.transitionDelay = `${i * 120}ms`;
+    fadeObserver.observe(el);
+  });
+
+  // Observer para elementos que se deslizan desde los lados
+  const slideObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("slide-visible");
+      }
+    });
+  }, {
+    threshold: 0.2,
+    rootMargin: "0px"
+  });
+
+  $$(".slide-in-left, .slide-in-right").forEach(el => slideObserver.observe(el));
+}
+
+// ===== Contador animado de clientes satisfechos =====
+function initAnimatedCounter() {
+  const counterElement = $("#clientesSatisfechos");
+  if (!counterElement) return;
+
+  const target = parseInt(counterElement.dataset.target) || 100;
+  let current = 0;
+  const increment = target / 50;
+  let animated = false;
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting && !animated) {
+      animated = true;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          counterElement.textContent = `+${target}`;
+          clearInterval(timer);
+        } else {
+          counterElement.textContent = `+${Math.floor(current)}`;
+        }
+      }, 30);
+    }
+  }, { threshold: 0.5 });
+
+  counterObserver.observe(counterElement);
+}
+
+// ===== Validación de formulario =====
+function initFormValidation() {
+  const form = $("#formCotizacion");
+  if (!form) return;
+
+  const inputs = form.querySelectorAll("input[required], select[required], textarea[required]");
+
+  function validateField(field) {
+    const value = field.value.trim();
+    let isValid = true;
+
+    if (!value) {
+      isValid = false;
+    } else if (field.type === "email") {
+      isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    } else if (field.type === "tel" && !/^[\d\s+-]{7,}$/.test(value)) {
+      isValid = false;
+    }
+
+    field.classList.remove("invalid", "valid");
+    const existingError = field.parentElement.querySelector(".field-error");
+    if (existingError) existingError.remove();
+
+    if (value && isValid) field.classList.add("valid");
+    else if (value && !isValid) {
+      field.classList.add("invalid");
+      const error = document.createElement("span");
+      error.className = "field-error";
+      error.textContent = field.type === "email" ? "Correo inválido" : "Campo inválido";
+      field.parentElement.appendChild(error);
+    }
+
+    return isValid;
+  }
+
+  inputs.forEach(input => {
+    input.addEventListener("blur", () => validateField(input));
+    input.addEventListener("input", () => {
+      if (input.classList.contains("invalid")) validateField(input);
+    });
+  });
+}
+
+// ===== Envío de formulario =====
+function initFormSubmit() {
+  const form = $("#formCotizacion");
+  if (!form) return;
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const submitBtn = form.querySelector("[type=submit]");
+    if (submitBtn?.disabled) return;
+    submitBtn && (submitBtn.disabled = true);
+
+    const nombre = $("#nombre")?.value.trim();
+    const telefono = $("#telefono")?.value.trim();
+    const email = $("#email")?.value.trim();
+    const servicio = $("#servicio")?.value || "No especificado";
+    const detalle = $("#detalle")?.value.trim();
+
+    if (!nombre) {
+      alert("Por favor, ingresa tu nombre.");
+      $("#nombre")?.focus();
+      submitBtn && (submitBtn.disabled = false);
+      return;
+    }
+
+    if (!telefono) {
+      alert("Por favor, ingresa tu teléfono.");
+      $("#telefono")?.focus();
+      submitBtn && (submitBtn.disabled = false);
+      return;
+    }
+
+    // Construir mensaje
+    let mensaje = `Hola, mi nombre es ${nombre}.\n`;
+    mensaje += `Quiero cotizar: ${servicio}.\n`;
+    if (detalle) mensaje += `Detalles: ${detalle}.\n`;
+    if (telefono) mensaje += `Teléfono: ${telefono}\n`;
+    if (email) mensaje += `Correo: ${email}`;
+
+    // Enviar por WhatsApp
+    const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(mensaje)}`;
+    window.location.href = url;
+  });
+}
+
+// ===== Testimonios Carousel =====
+function initTestimonialCarousel() {
+  const track = $("#tcTrack");
+  const prevBtn = $("#tcPrev");
+  const nextBtn = $("#tcNext");
+  if (!track) return;
+
+  const cards = track.querySelectorAll(".testimonial-card");
+  const totalCards = cards.length;
+  let currentIndex = 0;
+  let visibleCards = 3;
+
+  function updateVisibleCount() {
+    if (window.innerWidth < 680) visibleCards = 1;
+    else if (window.innerWidth < 900) visibleCards = 2;
+    else visibleCards = 3;
+  }
+
+  function updateButtons() {
+    prevBtn?.classList.toggle("tc-hidden", currentIndex === 0);
+    nextBtn?.classList.toggle("tc-hidden", currentIndex >= totalCards - visibleCards);
+  }
+
+  function scrollToIndex() {
+    const card = cards[0];
+    if (!card) return;
+    const gap = 28;
+    const cardWidth = card.offsetWidth;
+    const scrollAmount = (cardWidth + gap) * currentIndex;
+    track.scrollTo({ left: scrollAmount, behavior: "smooth" });
+    updateButtons();
+  }
+
+  function canGoNext() {
+    updateVisibleCount();
+    return currentIndex < totalCards - visibleCards;
+  }
+
+  function canGoPrev() {
+    return currentIndex > 0;
+  }
+
+  prevBtn?.addEventListener("click", () => {
+    if (canGoPrev()) {
+      currentIndex--;
+      scrollToIndex();
+    }
+  });
+
+  nextBtn?.addEventListener("click", () => {
+    if (canGoNext()) {
+      currentIndex++;
+      scrollToIndex();
+    }
+  });
+
+  updateButtons();
+
+  window.addEventListener("resize", () => {
+    const prevVisible = visibleCards;
+    updateVisibleCount();
+    if (visibleCards !== prevVisible) {
+      currentIndex = Math.min(currentIndex, totalCards - visibleCards);
+      if (currentIndex < 0) currentIndex = 0;
+      scrollToIndex();
+    }
+    updateButtons();
+  });
+}
+
+// ===== Inicializar todo =====
+function init() {
+  initGalleryCarousel();
+  initFAQ();
+  initScrollAnimations();
+  initAnimatedCounter();
+  initFormValidation();
+  initFormSubmit();
+  initWhatsAppLinks();
+  initTestimonialCarousel();
+
+  // Animación de entrada del hero
+  setTimeout(() => {
+    document.body.classList.add("loaded");
+  }, 100);
+
+}
+
+function initWhatsAppLinks() {
+  document.querySelectorAll("[data-wa-msg]").forEach(el => {
+    el.addEventListener("click", function(e) {
+      e.preventDefault();
+      const msg = this.getAttribute("data-wa-msg");
+      if (msg) {
+        window.location.href = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
+      }
+    });
+  });
+}
+
+// Ejecutar cuando el DOM esté listo
+function boot() {
+  try {
+    init();
+  } catch (err) {
+    console.error("Easy-Job: Error en init():", err);
+  }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", boot);
+} else {
+  boot();
+}
