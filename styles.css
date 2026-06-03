@@ -1062,10 +1062,12 @@ header:not(.scrolled) .logo-mark img {
   grid-template-rows: repeat(2, 1fr);
   gap: 1.5rem;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
+  scroll-snap-type: x proximity;
   padding: 1rem 0.5rem;
   scrollbar-width: none;
   grid-auto-columns: calc((100% - 3rem) / 3);
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 .gallery-track::-webkit-scrollbar { display: none; }

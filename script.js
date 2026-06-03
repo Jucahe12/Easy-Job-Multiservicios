@@ -319,7 +319,7 @@ function initCarouselWheelScroll(track) {
   track.addEventListener("wheel", (e) => {
     if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
       e.preventDefault();
-      track.scrollBy({ left: e.deltaY, behavior: "auto" });
+      track.scrollBy({ left: e.deltaY, behavior: "smooth" });
     }
   }, { passive: false });
 }
