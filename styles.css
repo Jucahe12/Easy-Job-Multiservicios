@@ -19,7 +19,7 @@
   --accent: #DC2626;
   --accent-light: #EF4444;
   --accent-soft: #FEE2E2;
-  --accent-gradient: linear-gradient(135deg, #DC2626 0%, #EF4444 50%, #B91C1C 100%);
+  --accent-gradient: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
 
   /* Colores cálidos nuevos */
   --accent-warm: #F59E0B;
