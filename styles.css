@@ -2075,7 +2075,7 @@ body.loaded .hero-image { animation-delay: 0.4s; }
 /* ====== Animaciones ====== */
 /* Fade in desde abajo */
 body.loaded .hero-logo-img {
-  animation: logo-zoom-in 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: logo-zoom-in 1.8s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
 }
 
 @keyframes logo-zoom-in {
