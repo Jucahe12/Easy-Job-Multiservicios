@@ -2470,7 +2470,7 @@ body.loaded .star-burst {
 .hero-subtitle {
   font-family: var(--font-cursive);
   font-size: clamp(1.3rem, 3vw + 0.3rem, 2rem);
-  color: rgba(255,255,255,0.9);
+  color: #FCD34D;
   font-weight: 500;
   margin: 0 0 0.75rem;
   text-shadow: 0 2px 12px rgba(0,0,0,0.5);
