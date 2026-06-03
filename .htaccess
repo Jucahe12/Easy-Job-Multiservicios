@@ -1,0 +1,58 @@
+# ============================================
+# CONFIGURACIÓN PARA APACHE
+# ============================================
+
+# Habilitar compresión GZIP
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json
+  AddOutputFilterByType DEFLATE application/x-javascript text/xml application/xml
+</IfModule>
+
+# Cache del navegador
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Imágenes
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+
+  # CSS y JavaScript
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+
+  # Fuentes
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# Encabezados de seguridad
+<IfModule mod_headers.c>
+  # Protección XSS
+  Header set X-XSS-Protection "1; mode=block"
+
+  # Prevenir clickjacking
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # Prevenir MIME-sniffing
+  Header set X-Content-Type-Options "nosniff"
+
+  # Referrer policy
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Redirección a HTTPS
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Página 404 personalizada
+ErrorDocument 404 /404.html
+
+# Deshabilitar listado de directorios
+Options -Indexes
+
+# Codificación por defecto
+AddDefaultCharset UTF-8
