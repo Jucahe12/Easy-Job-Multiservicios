@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CO">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Política de Privacidad | Easy-Job Multiservicios</title>
   <meta name="description" content="Política de privacidad de Easy-Job Multiservicios. Conoce cómo tratamos tus datos personales." />
+  <link rel="canonical" href="https://easyjobmultiservicios.com/privacidad.html" />
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -28,7 +29,7 @@
         <div class="section-header">
           <span class="section-tag">Legal</span>
           <h1>Política de Privacidad</h1>
-          <p class="section-description">Última actualización: 14 de abril de 2026</p>
+          <p class="section-description">Última actualización: <span id="lastUpdate"></span></p>
         </div>
 
         <div style="line-height: 1.8; color: var(--ink);">
@@ -73,11 +74,11 @@
           </ul>
 
           <h2 style="color: var(--brand); margin-top: 2rem;">6. Uso de WhatsApp</h2>
-          <p>Al enviar tu información a través del formulario de contacto, esta se enviará directamente a nuestro WhatsApp empresarial. WhatsApp tiene su propia política de privacidad que puedes consultar en <a href="https://whatsapp.com/legal" target="_blank" rel="noopener" style="color: var(--brand);">whatsapp.com/legal</a>.</p>
+          <p>Al enviar tu información a través del formulario de contacto, esta se enviará directamente a nuestro WhatsApp empresarial. WhatsApp tiene su propia política de privacidad que puedes consultar en <a href="https://whatsapp.com/legal" target="_blank" rel="noopener noreferrer" style="color: var(--brand);">whatsapp.com/legal</a>.</p>
 
           <div style="margin-top: 3rem; padding: 1.5rem; background: var(--bg-alt); border-radius: 12px; text-align: center;">
             <p style="margin: 0;"><strong>Easy-Job Multiservicios SAS</strong></p>
-            <p style="margin: 0; color: var(--muted);">NIT: 900844997</p>
+            <p style="margin: 0; color: var(--muted);">NIT: 900844997-4</p>
           </div>
         </div>
       </div>
@@ -87,13 +88,23 @@
   <footer>
     <div class="container">
       <div class="footer-bottom">
-        <p>&copy; 2026 Easy-Job Multiservicios. Todos los derechos reservados.</p>
+        <p>&copy; <span id="year"></span> Easy-Job Multiservicios. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    (function() {
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      const months = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+      const lastUpdateEl = document.getElementById('lastUpdate');
+      if (lastUpdateEl) {
+        const d = new Date();
+        lastUpdateEl.textContent = d.getDate() + ' de ' + months[d.getMonth()] + ' de ' + d.getFullYear();
+      }
+    })();
   </script>
 </body>
 </html>

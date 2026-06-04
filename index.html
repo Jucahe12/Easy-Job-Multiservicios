@@ -1,66 +1,69 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CO">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Easy-Job Multiservicios | Jardinería y Aseo Profesional</title>
-  <meta name="description" content="Servicios profesionales de jardinería y aseo. Mantenimiento de jardines, podas, riego, limpieza residencial y empresarial. ¡Cotiza gratis!" />
+  <title>Jardinería y Aseo en Cajicá, Chía y Zipaquirá | Easy-Job Multiservicios</title>
+  <meta name="description" content="Servicios profesionales de jardinería, poda de árboles, mantenimiento de jardines y aseo en Cajicá, Chía, Zipaquirá, Sopó, Tenjo y Tabio. Cotiza gratis por WhatsApp." />
+  <meta name="keywords" content="jardinería Cajicá, jardinería Chía, jardinería Zipaquirá, poda de árboles Cajicá, mantenimiento de jardines, aseo residencial, aseo empresarial, Easy-Job Multiservicios" />
   <meta name="theme-color" content="#126B4E" />
+  <meta name="theme-color" content="#0a2920" media="(prefers-color-scheme: dark)" />
+  <meta name="geo.region" content="CO-CUN" />
+  <meta name="geo.placename" content="Cajicá, Chía, Zipaquirá" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Easy-Job Multiservicios | Jardinería y Aseo" />
-  <meta property="og:description" content="Hacemos tu trabajo fácil y rentable. Jardinería, aseo, construcción y administración de personal. Cotiza por WhatsApp." />
+  <link rel="canonical" href="https://easyjobmultiservicios.com/" />
+
+  <meta property="og:title" content="Jardinería y Aseo en Cajicá, Chía y Zipaquirá | Easy-Job Multiservicios" />
+  <meta property="og:description" content="Hacemos tu trabajo fácil y rentable. Jardinería, poda, aseo y mantenimiento en Cajicá, Chía, Zipaquirá y toda la Sabana Centro. Cotiza por WhatsApp." />
+  <meta property="og:site_name" content="Easy-Job Multiservicios" />
+  <meta property="og:locale" content="es_CO" />
   <meta property="og:type" content="website" />
 
-  <!-- Preload / Preconnect -->
   <link rel="preload" href="styles.css" as="style">
   <link rel="preload" href="script.js" as="script">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+  <link rel="icon" type="image/png" href="assets/icons/icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/icon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/icon-72x72.png">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/media/Logo Easy Job.png">
-
-  <!-- Manifest para PWA -->
   <link rel="manifest" href="manifest.json">
 
-  <!-- Apple Touch Icon -->
-  <link rel="apple-touch-icon" href="assets/media/Logo Easy Job.png">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192x192.png">
 
-  <!-- iOS PWA -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Easy-Job">
 
-  <!-- Open Graph Image (para compartir en redes sociales) -->
-  <meta property="og:image" content="https://tudominio.com/assets/portada.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:url" content="https://tudominio.com/">
+  <meta property="og:image" content="https://easyjobmultiservicios.com/assets/icons/icon-512x512.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:url" content="https://easyjobmultiservicios.com/">
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Easy-Job Multiservicios | Jardinería y Aseo Profesional">
-  <meta name="twitter:description" content="Servicios profesionales de jardinería y aseo. Mantenimiento de jardines, podas, riego, limpieza residencial y empresarial.">
-  <meta name="twitter:image" content="https://tudominio.com/assets/portada.jpg">
+  <meta name="twitter:title" content="Jardinería y Aseo en Cajicá, Chía y Zipaquirá | Easy-Job Multiservicios">
+  <meta name="twitter:description" content="Servicios profesionales de jardinería, poda de árboles y aseo en Cajicá, Chía, Zipaquirá y Sabana Centro.">
+  <meta name="twitter:image" content="https://easyjobmultiservicios.com/assets/icons/icon-512x512.png">
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": "https://easyjobmultiservicios.com/#business",
     "name": "Easy-Job Multiservicios SAS",
-    "image": "https://tudominio.com/assets/portada.jpg",
-    "url": "https://tudominio.com/",
+    "image": "https://easyjobmultiservicios.com/assets/icons/icon-512x512.png",
+    "logo": "https://easyjobmultiservicios.com/assets/icons/icon-512x512.png",
+    "url": "https://easyjobmultiservicios.com/",
     "telephone": "+57-320-209-5621",
     "email": "easy.jobmultiserviciossas@gmail.com",
-    "description": "Servicios profesionales de jardinería y aseo para hogares y empresas en Cajicá, Chía y Zipaquirá.",
+    "description": "Servicios profesionales de jardinería, poda de árboles, mantenimiento de jardines y aseo residencial y empresarial en Cajicá, Chía, Zipaquirá y toda la Sabana Centro de Cundinamarca.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Centro Empresarial, Cl. 3 #2-43",
@@ -68,16 +71,50 @@
       "addressRegion": "Cundinamarca",
       "addressCountry": "CO"
     },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "4.9177",
+      "longitude": "-74.0277"
+    },
     "areaServed": [
       { "@type": "City", "name": "Cajicá" },
       { "@type": "City", "name": "Chía" },
-      { "@type": "City", "name": "Zipaquirá" }
+      { "@type": "City", "name": "Zipaquirá" },
+      { "@type": "City", "name": "Sopó" },
+      { "@type": "City", "name": "Tenjo" },
+      { "@type": "City", "name": "Tabio" }
     ],
-    "openingHours": ["Mo-Fr 09:00-17:00", "Sa 09:00-12:00"],
-    "priceRange": "$$"
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00",
+        "closes": "17:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "12:00"
+      }
+    ],
+    "priceRange": "$$",
+    "currenciesAccepted": "COP",
+    "paymentAccepted": "Cash, Bank Transfer",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios Easy-Job",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Jardinería y mantenimiento de jardines" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Poda de árboles" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Corte de césped y setos" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diseño paisajístico" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aseo residencial y empresarial" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Riego y abonado" } }
+      ]
+    }
   }
   </script>
-  <!-- UPDATE: Reemplaza "tudominio.com" por tu dominio real en las etiquetas OG y JSON-LD arriba -->
 </head>
 <body>
   <!-- ========= Header ========= -->
@@ -167,7 +204,7 @@
 
         <p class="hero-subtitle fade-in-up delay-2">"Hacemos tu trabajo fácil y rentable"</p>
         <div class="hero-description-card fade-in-up delay-3">
-          <p class="hero-description">Jardinería, aseo profesional, poda de árboles, fumigación y más en Cajicá y Cundinamarca</p>
+          <p class="hero-description">Jardinería, aseo profesional, poda de árboles, fumigación y más en <strong>Cajicá, Chía, Zipaquirá, Sopó, Tenjo y Tabio</strong></p>
         </div>
         </div>
       </div>
@@ -265,6 +302,11 @@
         <div class="section-cta fade-in">
           <p>¿No encuentras lo que buscas?</p>
           <a href="#contacto" class="btn btn-primary">Cuéntanos tu necesidad y te ayudamos</a>
+        </div>
+
+        <div class="service-areas fade-in" style="margin-top: 3rem; padding: 1.75rem; background: linear-gradient(135deg, rgba(18,107,78,0.06), rgba(18,107,78,0.02)); border-left: 4px solid #126B4E; border-radius: 8px;">
+          <h3 style="margin: 0 0 0.75rem 0; color: #126B4E; font-size: 1.2rem;">Zonas de servicio en la Sabana Centro</h3>
+          <p style="margin: 0; line-height: 1.7;">Brindamos servicios de <strong>jardinería, poda de árboles, mantenimiento de zonas verdes y aseo profesional</strong> en <strong>Cajicá, Chía, Zipaquirá, Sopó, Tenjo, Tabio</strong> y municipios cercanos de Cundinamarca. Si tu conjunto residencial, empresa o vivienda está en alguna de estas zonas, contáctanos por WhatsApp y te enviamos cotización el mismo día.</p>
         </div>
       </div>
     </section>
@@ -1713,20 +1755,26 @@
     </div>
   </footer>
 
-  <!-- Botón flotante de WhatsApp -->
   <a data-wa-msg="Hola Easy-Job, quiero una cotización" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <!-- Botón volver al inicio -->
   <a href="#inicio" class="scroll-top-float" aria-label="Volver al inicio">
     <i class="fas fa-chevron-up"></i>
   </a>
 
+  <noscript>
+    <div style="background:#FEF3C7;color:#78350F;padding:1rem;text-align:center;font-weight:600;">
+      Para una mejor experiencia, activa JavaScript.
+      También puedes contactarnos directo:
+      <a href="https://wa.me/573202095621" style="color:#16A34A;font-weight:700;margin-left:0.5rem;">WhatsApp +57 320 209 5621</a>
+    </div>
+  </noscript>
+
   <script src="script.js"></script>
   <script>
     if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("sw.js");
+      navigator.serviceWorker.register("sw.js").catch(function() {});
     }
   </script>
 </body>

@@ -14,3 +14,7 @@ easy-job-deploy.tar.gz
 # Env (if added later)
 .env
 .env.local
+
+# Documentos internos (no se despliegan)
+docs/
+documentos/

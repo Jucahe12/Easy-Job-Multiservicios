@@ -1,16 +1,11 @@
-// ===== Configuración =====
 const WHATSAPP_PHONE = "573202095621";
-const COMPANY_EMAIL = "easy.jobmultiserviciossas@gmail.com";
 
-// ===== Utilidades =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => document.querySelectorAll(sel);
 
-// ===== Año en footer =====
 const yearEl = $("#year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// ===== Header scroll effect =====
 const header = $("#header");
 
 window.addEventListener("scroll", () => {
@@ -21,7 +16,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// ===== Menú móvil =====
 const menuBtn = $("#menuBtn");
 const navLinks = $("#navLinks");
 
@@ -32,7 +26,6 @@ menuBtn?.addEventListener("click", () => {
   menuBtn?.setAttribute("aria-expanded", navLinks?.classList.contains("open"));
 });
 
-// Cerrar menú al hacer clic fuera
 document.addEventListener("click", (e) => {
   if (navLinks?.classList.contains("open") &&
       !e.target.closest("#navLinks") &&
@@ -41,27 +34,12 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// Cerrar menú al hacer clic en enlace
 $$("#navLinks a").forEach(link => {
   link.addEventListener("click", () => {
     navLinks?.classList.remove("open");
   });
 });
 
-// ===== data-service: preseleccionar servicio en formulario =====
-document.addEventListener("click", (e) => {
-  const anchor = e.target.closest("a[data-service]");
-  if (!anchor) return;
-  const service = anchor.getAttribute("data-service");
-  if (!service) return;
-  const select = document.getElementById("servicio");
-  if (select) {
-    select.value = service;
-    select.dispatchEvent(new Event("change", { bubbles: true }));
-  }
-});
-
-// ===== Galería Carrusel =====
 function initGalleryCarousel() {
   const track = $("#gcTrack");
   const filterBtns = $$(".gallery-filter-btn");
@@ -82,21 +60,18 @@ function initGalleryCarousel() {
       item.classList.toggle("hidden", filter !== "all" && category !== filter);
     });
 
-    track.scrollTo({ left: 0, behavior: "instant" });
+    track.scrollTo({ left: 0, behavior: "auto" });
     initCarouselWheelScroll(track);
   }
 
-  // Filter buttons
   filterBtns.forEach(btn => {
     btn.addEventListener("click", () => applyFilter(btn.dataset.filter));
   });
 
-  // Init
   applyFilter("all");
   initCarouselWheelScroll(track);
 }
 
-// ===== FAQ Accordion =====
 function initFAQ() {
   $$(".faq-item").forEach(item => {
     const question = item.querySelector(".faq-question");
@@ -110,9 +85,7 @@ function initFAQ() {
   });
 }
 
-// ===== Animaciones al hacer scroll =====
 function initScrollAnimations() {
-  // Observer para elementos que aparecen suavemente
   const fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -126,21 +99,6 @@ function initScrollAnimations() {
 
   $$(".fade-in").forEach(el => fadeObserver.observe(el));
 
-  // Observer para animaciones en cascada (stagger)
-  const staggerObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add("visible");
-        }, index * 100);
-      }
-    });
-  }, {
-    threshold: 0.1,
-    rootMargin: "0px 0px -80px 0px"
-  });
-
-  // Aplicar stagger a elementos agrupados
   $$(".grid-3 .service-card").forEach((el, i) => {
     el.style.transitionDelay = `${i * 100}ms`;
     fadeObserver.observe(el);
@@ -155,51 +113,8 @@ function initScrollAnimations() {
     el.style.transitionDelay = `${i * 120}ms`;
     fadeObserver.observe(el);
   });
-
-  // Observer para elementos que se deslizan desde los lados
-  const slideObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("slide-visible");
-      }
-    });
-  }, {
-    threshold: 0.2,
-    rootMargin: "0px"
-  });
-
-  $$(".slide-in-left, .slide-in-right").forEach(el => slideObserver.observe(el));
 }
 
-// ===== Contador animado de clientes satisfechos =====
-function initAnimatedCounter() {
-  const counterElement = $("#clientesSatisfechos");
-  if (!counterElement) return;
-
-  const target = parseInt(counterElement.dataset.target) || 100;
-  let current = 0;
-  const increment = target / 50;
-  let animated = false;
-
-  const counterObserver = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting && !animated) {
-      animated = true;
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-          counterElement.textContent = `+${target}`;
-          clearInterval(timer);
-        } else {
-          counterElement.textContent = `+${Math.floor(current)}`;
-        }
-      }, 30);
-    }
-  }, { threshold: 0.5 });
-
-  counterObserver.observe(counterElement);
-}
-
-// ===== Validación de formulario =====
 function initFormValidation() {
   const form = $("#formCotizacion");
   if (!form) return;
@@ -213,8 +128,8 @@ function initFormValidation() {
     if (!value) {
       isValid = false;
     } else if (field.type === "email") {
-      isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-    } else if (field.type === "tel" && !/^[\d\s+-]{7,}$/.test(value)) {
+      isValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value);
+    } else if (field.type === "tel" && !/^(\+?57)?[\s-]?[3][0-9]{9}$/.test(value.replace(/\s/g, ""))) {
       isValid = false;
     }
 
@@ -242,7 +157,6 @@ function initFormValidation() {
   });
 }
 
-// ===== Envío de formulario =====
 function initFormSubmit() {
   const form = $("#formCotizacion");
   if (!form) return;
@@ -252,7 +166,7 @@ function initFormSubmit() {
 
     const submitBtn = form.querySelector("[type=submit]");
     if (submitBtn?.disabled) return;
-    submitBtn && (submitBtn.disabled = true);
+    if (submitBtn) submitBtn.disabled = true;
 
     const nombre = $("#nombre")?.value.trim();
     const telefono = $("#telefono")?.value.trim();
@@ -260,71 +174,71 @@ function initFormSubmit() {
     const servicio = $("#servicio")?.value || "No especificado";
     const detalle = $("#detalle")?.value.trim();
 
-    if (!nombre) {
-      alert("Por favor, ingresa tu nombre.");
-      $("#nombre")?.focus();
-      submitBtn && (submitBtn.disabled = false);
+    if (!nombre || !telefono) {
+      const target = !nombre ? $("#nombre") : $("#telefono");
+      const fieldName = !nombre ? "nombre" : "teléfono";
+      target?.classList.add("invalid");
+      target?.focus();
+      const existing = target?.parentElement.querySelector(".field-error");
+      if (!existing && target) {
+        const err = document.createElement("span");
+        err.className = "field-error";
+        err.textContent = `Ingresa tu ${fieldName}`;
+        target.parentElement.appendChild(err);
+      }
+      if (submitBtn) submitBtn.disabled = false;
       return;
     }
 
-    if (!telefono) {
-      alert("Por favor, ingresa tu teléfono.");
-      $("#telefono")?.focus();
-      submitBtn && (submitBtn.disabled = false);
-      return;
-    }
-
-    // Construir mensaje
     let mensaje = `Hola, mi nombre es ${nombre}.\n`;
     mensaje += `Quiero cotizar: ${servicio}.\n`;
-    if (detalle) mensaje += `Detalles: ${detalle}.\n`;
+    if (detalle) mensaje += `Detalles: ${detalle.replace(/[\r\n]+/g, " ")}.\n`;
     if (telefono) mensaje += `Teléfono: ${telefono}\n`;
     if (email) mensaje += `Correo: ${email}`;
 
-    // Enviar por WhatsApp
     const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(mensaje)}`;
     window.location.href = url;
   });
 }
 
-// ===== Testimonios Carousel =====
 function initTestimonialCarousel() {
   const track = $("#tcTrack");
   if (!track) return;
   initCarouselWheelScroll(track);
 }
 
-// ===== Logo edge trace init =====
 function initLogoTrace() {
   const path = document.querySelector(".logo-edge-trace");
   if (!path) return;
-  const len = Math.ceil(path.getTotalLength());
-  path.style.setProperty("--path-len", len);
+  const update = () => {
+    const len = Math.ceil(path.getTotalLength());
+    path.style.setProperty("--path-len", len);
+  };
+  update();
+  window.addEventListener("resize", update, { passive: true });
 }
 
-// ===== Scroll to top button =====
 function initScrollToTop() {
   const btn = document.querySelector(".scroll-top-float");
   if (!btn) return;
   window.addEventListener("scroll", () => {
     btn.classList.toggle("visible", window.scrollY > 300);
-  });
+  }, { passive: true });
 }
 
-// ===== Soporte rueda del mouse para carruseles =====
+const wheelInitSet = new WeakSet();
 function initCarouselWheelScroll(track) {
-  if (!track || track.dataset.wheelInit) return;
-  track.dataset.wheelInit = "true";
+  if (!track || wheelInitSet.has(track)) return;
+  wheelInitSet.add(track);
 
   track.addEventListener("wheel", (e) => {
-    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+    if (Math.abs(e.deltaY) > Math.abs(e.deltaX) && track.scrollWidth > track.clientWidth) {
       e.preventDefault();
       track.scrollBy({ left: e.deltaY, behavior: "smooth" });
     }
   }, { passive: false });
 }
 
-// ===== Ocultar flecha indicadora al primer scroll =====
 function initCarouselHints() {
   const carousels = document.querySelectorAll(".gallery-carousel, .testimonials-carousel");
   carousels.forEach(carousel => {
@@ -348,27 +262,6 @@ function initCarouselHints() {
   });
 }
 
-// ===== Inicializar todo =====
-function init() {
-  initGalleryCarousel();
-  initFAQ();
-  initScrollAnimations();
-  initAnimatedCounter();
-  initFormValidation();
-  initFormSubmit();
-  initWhatsAppLinks();
-  initTestimonialCarousel();
-  initCarouselHints();
-  initLogoTrace();
-  initScrollToTop();
-
-  // Animación de entrada del hero
-  setTimeout(() => {
-    document.body.classList.add("loaded");
-  }, 100);
-
-}
-
 function initWhatsAppLinks() {
   document.querySelectorAll("[data-wa-msg]").forEach(el => {
     el.addEventListener("click", function(e) {
@@ -381,12 +274,30 @@ function initWhatsAppLinks() {
   });
 }
 
-// Ejecutar cuando el DOM esté listo
+function init() {
+  initGalleryCarousel();
+  initFAQ();
+  initScrollAnimations();
+  initFormValidation();
+  initFormSubmit();
+  initWhatsAppLinks();
+  initTestimonialCarousel();
+  initCarouselHints();
+  initLogoTrace();
+  initScrollToTop();
+
+  setTimeout(() => {
+    document.body.classList.add("loaded");
+  }, 100);
+}
+
 function boot() {
   try {
     init();
   } catch (err) {
-    console.error("Easy-Job: Error en init():", err);
+    if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+      console.error("Easy-Job: Error en init():", err);
+    }
   }
 }
 
