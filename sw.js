@@ -1,5 +1,5 @@
-const CACHE = "easy-job-v2";
-const ASSETS = [
+const CACHE = "easy-job-v3";
+const CORE_ASSETS = [
   "/",
   "/index.html",
   "/styles.css",
@@ -16,7 +16,7 @@ self.addEventListener("install", (e) => {
   e.waitUntil(
     caches.open(CACHE)
       .then((c) => Promise.all(
-        ASSETS.map((url) =>
+        CORE_ASSETS.map((url) =>
           fetch(url, { method: "HEAD" })
             .then((res) => res.ok ? c.add(url) : null)
             .catch(() => null)
@@ -36,6 +36,13 @@ self.addEventListener("activate", (e) => {
 
 self.addEventListener("fetch", (e) => {
   if (e.request.method !== "GET") return;
+  const url = new URL(e.request.url);
+
+  if (url.pathname.startsWith("/assets/media/") || url.pathname.startsWith("/assets/icons/")) {
+    e.respondWith(staleWhileRevalidate(e.request));
+    return;
+  }
+
   e.respondWith(
     caches.match(e.request).then((cached) => {
       if (cached) return cached;
@@ -49,3 +56,15 @@ self.addEventListener("fetch", (e) => {
     })
   );
 });
+
+async function staleWhileRevalidate(request) {
+  const cache = await caches.open(CACHE);
+  const cached = await cache.match(request);
+  const networkFetch = fetch(request).then((response) => {
+    if (response && response.status === 200) {
+      cache.put(request, response.clone());
+    }
+    return response;
+  }).catch(() => cached);
+  return cached || networkFetch;
+}
