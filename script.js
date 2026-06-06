@@ -88,9 +88,7 @@ function initFAQ() {
 function initScrollAnimations() {
   const fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
+      entry.target.classList.toggle("visible", entry.isIntersecting);
     });
   }, {
     threshold: 0.1,
