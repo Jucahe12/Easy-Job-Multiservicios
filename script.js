@@ -14,7 +14,11 @@ window.addEventListener("scroll", () => {
   } else {
     header?.classList.remove("scrolled");
   }
-});
+  document.body.classList.toggle(
+    "on-hero",
+    window.pageYOffset < window.innerHeight * 0.6
+  );
+}, { passive: true });
 
 const menuBtn = $("#menuBtn");
 const navLinks = $("#navLinks");

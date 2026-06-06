@@ -328,12 +328,43 @@ nav a.btn {
   border-color: rgba(255,255,255,0.35);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-toggle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 35%,
+    rgba(22, 163, 74, 0.55) 50%,
+    transparent 65%
+  );
+  background-size: 250% 100%;
+  background-position: 100% 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+body.on-hero .menu-toggle::before {
+  opacity: 1;
+  animation: menuShine 2.5s ease-in-out infinite;
+}
+
+@keyframes menuShine {
+  0%, 100% { background-position: 100% 0; }
+  50%      { background-position: -100% 0; }
 }
 
 .menu-toggle span {
   display: inline-block;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
+  position: relative;
+  z-index: 1;
 }
 
 .menu-toggle[aria-expanded="true"] span {
