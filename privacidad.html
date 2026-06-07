@@ -8,8 +8,9 @@
   <link rel="canonical" href="https://easyjobmultiservicios.com/privacidad.html" />
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="script.js" defer></script>
 </head>
-<body>
+<body class="theme-red">
   <header id="header">
     <div class="container nav">
       <a class="logo" href="index.html#inicio">
@@ -32,54 +33,78 @@
           <p class="section-description">Última actualización: <span id="lastUpdate"></span></p>
         </div>
 
-        <div style="line-height: 1.8; color: var(--ink);">
-          <h2 style="color: var(--brand); margin-top: 2rem;">1. Información que recopilamos</h2>
-          <p>En Easy-Job Multiservicios SAS, recopilamos la siguiente información cuando contactas con nosotros:</p>
-          <ul style="margin-left: 1.5rem; color: var(--muted);">
-            <li>Nombre completo</li>
-            <li>Número de teléfono / WhatsApp</li>
-            <li>Correo electrónico (opcional)</li>
-            <li>Dirección o ubicación aproximada del servicio</li>
-            <li>Detalles sobre el servicio requerido</li>
-          </ul>
+        <div class="grid grid-3">
+          <article class="card service-card fade-in">
+            <div class="service-badge">1</div>
+            <div class="service-icon"><i class="fa-solid fa-database"></i></div>
+            <h3>Información que recopilamos</h3>
+            <p>En Easy-Job Multiservicios SAS, recopilamos la siguiente información cuando contactas con nosotros:</p>
+            <ul class="service-sub-list">
+              <li>Nombre completo</li>
+              <li>Número de teléfono / WhatsApp</li>
+              <li>Correo electrónico (opcional)</li>
+              <li>Dirección o ubicación aproximada del servicio</li>
+              <li>Detalles sobre el servicio requerido</li>
+            </ul>
+          </article>
 
-          <h2 style="color: var(--brand); margin-top: 2rem;">2. Cómo usamos tu información</h2>
-          <p>Utilizamos tus datos personales exclusivamente para:</p>
-          <ul style="margin-left: 1.5rem; color: var(--muted);">
-            <li>Responder a tus solicitudes de cotización</li>
-            <li>Agendar visitas técnicas</li>
-            <li>Coordinar la prestación de servicios</li>
-            <li>Enviar recordatorios de mantenimiento (solo si nos autorizas)</li>
-            <li>Contactarte sobre el servicio solicitado</li>
-          </ul>
+          <article class="card service-card fade-in">
+            <div class="service-badge">2</div>
+            <div class="service-icon"><i class="fa-solid fa-bullseye"></i></div>
+            <h3>Cómo usamos tu información</h3>
+            <p>Utilizamos tus datos personales exclusivamente para:</p>
+            <ul class="service-sub-list">
+              <li>Responder a tus solicitudes de cotización</li>
+              <li>Agendar visitas técnicas</li>
+              <li>Coordinar la prestación de servicios</li>
+              <li>Enviar recordatorios de mantenimiento (solo si nos autorizas)</li>
+              <li>Contactarte sobre el servicio solicitado</li>
+            </ul>
+          </article>
 
-          <h2 style="color: var(--brand); margin-top: 2rem;">3. Protección de datos</h2>
-          <p>Tus datos personales están protegidos y no los compartimos con terceros bajo ninguna circunstancia, excepto cuando sea requerido por ley.</p>
+          <article class="card service-card fade-in">
+            <div class="service-badge">3</div>
+            <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Protección de datos</h3>
+            <p>Tus datos personales están protegidos mediante medidas técnicas y organizativas razonables. <strong>No vendemos ni cedemos tu información a terceros con fines comerciales o publicitarios.</strong> Sin embargo, para poder atenderte utilizamos herramientas operativas necesarias (como WhatsApp Business) que actúan como encargados del tratamiento — más detalles en la sección 6. También podremos divulgar tus datos cuando sea requerido por ley o autoridad competente.</p>
+          </article>
 
-          <h2 style="color: var(--brand); margin-top: 2rem;">4. Tus derechos</h2>
-          <p>Tienes derecho a:</p>
-          <ul style="margin-left: 1.5rem; color: var(--muted);">
-            <li>Acceder a tus datos personales</li>
-            <li>Solicitar la corrección de datos inexactos</li>
-            <li>Solicitar la eliminación de tus datos</li>
-            <li>Retirar tu consentimiento en cualquier momento</li>
-          </ul>
+          <article class="card service-card fade-in">
+            <div class="service-badge">4</div>
+            <div class="service-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+            <h3>Tus derechos</h3>
+            <p>Tienes derecho a:</p>
+            <ul class="service-sub-list">
+              <li>Acceder a tus datos personales</li>
+              <li>Solicitar la corrección de datos inexactos</li>
+              <li>Solicitar la eliminación de tus datos</li>
+              <li>Retirar tu consentimiento en cualquier momento</li>
+            </ul>
+          </article>
 
-          <h2 style="color: var(--brand); margin-top: 2rem;">5. Contacto</h2>
-          <p>Si tienes preguntas sobre esta política de privacidad o deseas ejercer tus derechos, puedes contactarnos:</p>
-          <ul style="margin-left: 1.5rem; color: var(--muted);">
-            <li>Email: <a href="mailto:easy.jobmultiserviciossas@gmail.com" style="color: var(--brand);">easy.jobmultiserviciossas@gmail.com</a></li>
-            <li>Teléfono: <a href="tel:+573202095621" style="color: var(--brand);">+57 320 209 5621</a></li>
-            <li>Dirección: Cajicá, Colombia</li>
-          </ul>
+          <article class="card service-card fade-in">
+            <div class="service-badge">5</div>
+            <div class="service-icon"><i class="fa-solid fa-envelope"></i></div>
+            <h3>Contacto</h3>
+            <p>Si tienes preguntas sobre esta política de privacidad o deseas ejercer tus derechos, puedes contactarnos:</p>
+            <ul class="service-sub-list">
+              <li>Email: <a href="mailto:easy.jobmultiserviciossas@gmail.com" style="color: var(--brand);">easy.jobmultiserviciossas@gmail.com</a></li>
+              <li>Teléfono: <a href="tel:+573202095621" style="color: var(--brand);">+57 320 209 5621</a></li>
+              <li>Dirección: Cajicá, Colombia</li>
+            </ul>
+          </article>
 
-          <h2 style="color: var(--brand); margin-top: 2rem;">6. Uso de WhatsApp</h2>
-          <p>Al enviar tu información a través del formulario de contacto, esta se enviará directamente a nuestro WhatsApp empresarial. WhatsApp tiene su propia política de privacidad que puedes consultar en <a href="https://whatsapp.com/legal" target="_blank" rel="noopener noreferrer" style="color: var(--brand);">whatsapp.com/legal</a>.</p>
+          <article class="card service-card fade-in">
+            <div class="service-badge">6</div>
+            <div class="service-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <h3>Uso de WhatsApp</h3>
+            <p>Nuestro canal principal de contacto es WhatsApp Business, propiedad de <strong>Meta Platforms Inc.</strong> Al enviar tu información a través del formulario, esta se transmite a los servidores de WhatsApp/Meta, <strong>lo que implica una transferencia internacional de datos</strong> (servidores fuera de Colombia). Meta actúa como encargado del tratamiento y se rige por su propia política, disponible en <a href="https://whatsapp.com/legal" target="_blank" rel="noopener noreferrer" style="color: var(--brand);">whatsapp.com/legal</a>. Al contactarnos por este medio, aceptas dicha transferencia. Si prefieres no usar WhatsApp, puedes escribirnos al correo o llamarnos a los números indicados en la sección 5.</p>
+          </article>
+        </div>
 
-          <div style="margin-top: 3rem; padding: 1.5rem; background: var(--bg-alt); border-radius: 12px; text-align: center;">
-            <p style="margin: 0;"><strong>Easy-Job Multiservicios SAS</strong></p>
-            <p style="margin: 0; color: var(--muted);">NIT: 900844997-4</p>
-          </div>
+        <div style="margin-top: 3rem; padding: 1.5rem; background: var(--bg-alt); border-radius: 12px; text-align: center;">
+          <p style="margin: 0;"><strong>Easy-Job Multiservicios SAS</strong></p>
+          <p style="margin: 0; color: var(--muted);">NIT: 900844997-4</p>
         </div>
       </div>
     </section>
