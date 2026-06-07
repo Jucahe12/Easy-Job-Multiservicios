@@ -1,0 +1,27 @@
+# Source control
+.git/
+.gitattributes
+.gitignore
+
+# Internal documentation (already in .gitignore)
+docs/
+documentos/
+
+# IDE / OS junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Apache config (Cloudflare Pages uses _headers, not .htaccess)
+.htaccess
+
+# Build artifacts and deploys
+*.zip
+*.tar.gz
+
+# Documentation not needed at runtime
+DEPLOY-GUIDE.md
+AGENTS.md

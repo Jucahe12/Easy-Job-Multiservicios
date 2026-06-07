@@ -2,8 +2,9 @@
 .DS_Store
 Thumbs.db
 
-# Deployment archive
-easy-job-deploy.tar.gz
+# Deployment archives
+*.zip
+*.tar.gz
 
 # IDE
 .vscode/
