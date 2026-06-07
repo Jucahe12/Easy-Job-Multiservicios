@@ -1560,6 +1560,65 @@ footer::before {
   font-size: 0.9rem;
 }
 
+.footer-policy-link {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: color 0.25s ease, background 0.25s ease;
+}
+
+.footer-policy-link:hover,
+.footer-policy-link:focus {
+  color: #fff;
+  background: rgba(22, 163, 74, 0.18);
+  outline: none;
+}
+
+.footer-policy-link.highlight {
+  animation: policyLinkHighlight 1.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes policyLinkHighlight {
+  0% {
+    color: rgba(255,255,255,0.7);
+    background: transparent;
+    text-shadow: none;
+  }
+  20% {
+    color: #fff;
+    background: rgba(22, 163, 74, 0.3);
+    text-shadow: 0 0 8px rgba(22, 163, 74, 0.7);
+  }
+  100% {
+    color: rgba(255,255,255,0.7);
+    background: transparent;
+    text-shadow: none;
+  }
+}
+
+.designer-credit {
+  text-align: center;
+  padding: 0.9rem 0 1.3rem;
+  background: #0d1410;
+  color: rgba(255,255,255,0.45);
+  font-size: 0.8rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.designer-credit a {
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.designer-credit a:hover,
+.designer-credit a:focus {
+  color: var(--brand, #16A34A);
+  outline: none;
+}
+
 /* ====== WhatsApp Flotante ====== */
 .whatsapp-float {
   position: fixed;
@@ -2337,4 +2396,84 @@ body.loaded .star-burst {
   .contact-info-icon { width: 32px; height: 32px; font-size: 1.1rem; }
   .contact-map { height: 200px; margin-top: 1rem; }
   footer { padding: 1.5rem 0 1rem; }
+}
+
+/* ============================================
+   TEMA BURGUNDY/WINE - Solo /privacidad.html
+   Actívalo con <body class="theme-red">
+   ============================================ */
+.theme-red {
+  --brand: #9F1239;
+  --brand-dark: #881337;
+  --brand-darker: #4C0519;
+  --brand-light: #FDA4AF;
+  --brand-soft: #FFE4E6;
+  --brand-fresh: #FECDD3;
+  --brand-gradient: linear-gradient(135deg, #9F1239 0%, #881337 100%);
+  --brand-gradient-accent: linear-gradient(135deg, #9F1239 0%, #BE123C 50%, #881337 100%);
+  --brand-gradient-warm: linear-gradient(135deg, #FECDD3 0%, #FDA4AF 100%);
+  --shadow-colored: 0 8px 24px rgba(159,18,57,0.20);
+}
+
+.theme-red .service-badge {
+  box-shadow: 0 3px 10px rgba(159,18,57,0.3);
+}
+
+/* Fix: que el email largo no rompa el layout en móvil */
+.theme-red .service-sub-list a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Layout horizontal de tarjetas en desktop (>= 768px) */
+@media (min-width: 768px) {
+  /* 1 sola columna: cada tarjeta ocupa todo el ancho del container */
+  .theme-red .grid-3 .service-card,
+  .theme-red .grid-3 .service-card-featured-2 {
+    flex: 0 0 100%;
+  }
+
+  /* Tarjeta horizontal: icono a la izquierda, contenido apilado a la derecha */
+  .theme-red .service-card {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    column-gap: 1.5rem;
+    row-gap: 0.5rem;
+    align-items: start;
+  }
+
+  /* El icono ocupa la primera columna, se extiende a lo alto y se centra verticalmente */
+  .theme-red .service-card .service-icon {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    align-self: center;
+    font-size: 2.4rem;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  /* Badge, título, párrafo y lista se apilan en la segunda columna */
+  .theme-red .service-card .service-badge {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: start;
+    align-self: start;
+  }
+
+  .theme-red .service-card h3 {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0;
+  }
+
+  .theme-red .service-card > p {
+    grid-column: 2;
+    grid-row: 3;
+    margin: 0;
+  }
+
+  .theme-red .service-card ul.service-sub-list {
+    grid-column: 2;
+    grid-row: 4;
+  }
 }

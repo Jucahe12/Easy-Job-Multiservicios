@@ -112,9 +112,29 @@ function initScrollAnimations() {
   });
 
   $$(".process-steps .process-step").forEach((el, i) => {
-    el.style.transitionDelay = `${i * 120}ms`;
+    el.style.transitionDelay = `${i * 100}ms`;
     fadeObserver.observe(el);
   });
+}
+
+function initFooterPolicyHighlight() {
+  const policyLink = $(".footer-policy-link");
+  const footer = $("footer");
+  if (!policyLink || !footer) return;
+
+  let triggered = false;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !triggered) {
+        triggered = true;
+        policyLink.classList.add("highlight");
+        observer.disconnect();
+        setTimeout(() => policyLink.classList.remove("highlight"), 1800);
+      }
+    });
+  }, { threshold: 0.35 });
+
+  observer.observe(footer);
 }
 
 function initFormValidation() {
@@ -287,6 +307,7 @@ function init() {
   initCarouselHints();
   initLogoTrace();
   initScrollToTop();
+  initFooterPolicyHighlight();
 
   setTimeout(() => {
     document.body.classList.add("loaded");
