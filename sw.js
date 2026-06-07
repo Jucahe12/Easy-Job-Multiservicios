@@ -1,4 +1,4 @@
-const CACHE = "easy-job-v3";
+const CACHE = "easy-job-v4";
 const CORE_ASSETS = [
   "/",
   "/index.html",
